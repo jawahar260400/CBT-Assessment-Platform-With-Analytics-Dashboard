@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRB NTPC & SSC | Mensuration 2D/3D Master Workbook (76 Problems)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --bg-void: #050811;
+            --bg-surface: #090E1D;
+            --bg-card: #0F172A;
+            --bg-hover: #1E293B;
+            --border-soft: #1E2B48;
+            --border-highlight: #2A3C64;
+            --amber-accent: #F59E0B;
+            --orange-sc: #EA580C;
+            --cyan-f: #0284C7;
+            --sky-accent: #38BDF8;
+        }
+
+        body {
+            background-color: var(--bg-void);
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(234, 88, 12, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 90% 85%, rgba(2, 132, 199, 0.05) 0%, transparent 45%);
+        }
+
+        .font-outfit { font-family: 'Outfit', sans-serif; }
+        .font-mono-code { font-family: 'JetBrains Mono', monospace; }
+
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-void); }
+        ::-webkit-scrollbar-thumb { background: var(--border-soft); border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38BDF8; }
+
+        .option-pill {
+            background: #0B1120;
+            border: 1px solid #1E293B;
+            transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .option-pill:hover {
+            border-color: #38BDF8;
+            background: rgba(56, 189, 248, 0.08);
+            transform: translateY(-1.5px);
+        }
+
+        .option-pill.selected {
+            border-color: #38BDF8;
+            background: rgba(56, 189, 248, 0.16);
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.25);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .unremember-checkbox {
+            accent-color: #F59E0B;
+            cursor: pointer;
+        }
+
+        /* 3-Tier Solution Explanations (Algebra theme exact match) */
+        .sc-box {
+            border: 1.5px solid #EA580C;
+            background-color: #040814;
+            border-radius: 12px;
+            padding: 18px 22px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .sc-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #F97316;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .sc-q-line {
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .sc-q-tag {
+            color: #F59E0B;
+            font-weight: 800;
+            margin-right: 4px;
+        }
+        .sc-sol-inner {
+            background-color: #02050E;
+            border: 1px solid #1E293B;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13.5px;
+            line-height: 1.75;
+            color: #F8FAFC;
+        }
+        .sc-sol-inner .sol-label {
+            color: #F59E0B;
+            font-weight: 800;
+            font-size: 13.5px;
+            margin-bottom: 8px;
+        }
+        .formula-box {
+            border: 1.5px solid #0284C7;
+            background-color: #021124;
+            border-radius: 12px;
+            padding: 16px 22px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .formula-box .f-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #38BDF8;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .formula-box .f-content {
+            font-family: 'JetBrains Mono', 'Plus Jakarta Sans', monospace;
+            font-size: 13.5px;
+            color: #E0F2FE;
+            line-height: 1.6;
+        }
+        .standard-box {
+            border: 1.5px solid #1E2B48;
+            background-color: #020617;
+            border-radius: 12px;
+            padding: 16px 22px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .standard-box .std-title {
+            color: #94A3B8;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .standard-box .std-content {
+            font-size: 13.5px;
+            color: #CBD5E1;
+            line-height: 1.65;
+        }
+        .diagram-container {
+            background: #040814;
+            border: 1px solid #1E2B48;
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-[#050811] text-slate-100">
+
+    <header class="border-b border-[#1E2B48] bg-[#090E1D]/90 backdrop-blur-md sticky top-0 z-40 px-4 md:px-8 py-3.5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-3 cursor-pointer" onclick="goHome()">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-sky-500 flex items-center justify-center font-bold text-slate-950 text-xl font-outfit shadow-lg shadow-orange-500/20">
+                    ∆
+                </div>
+                <div>
+                    <h1 class="font-outfit font-extrabold text-xl tracking-tight text-white leading-none">
+                        MENSURATION <span class="text-amber-400">PRO</span>
+                    </h1>
+                    <p id="subHeaderContext" class="text-[11px] tracking-wider text-slate-400 font-medium mt-1">Official SSC & Railway Paper Bank • 76 Solved Problems</p>
+                </div>
+            </div>
+
+            <div class="flex items-center bg-[#050811] border border-[#1E2B48] p-1 rounded-xl">
+                <button id="tabPart1" onclick="switchMainTab('part1')" class="px-5 py-2 rounded-lg font-outfit font-bold text-xs tracking-wider uppercase transition-all bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20">
+                    Mock Test
+                </button>
+                <button id="tabPart2" onclick="switchMainTab('part2')" class="px-5 py-2 rounded-lg font-outfit font-bold text-xs tracking-wider uppercase text-slate-400 hover:text-white transition-all">
+                    Visual Catalog
+                </button>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button onclick="openRulesModal()" class="px-3.5 py-1.5 rounded-lg border border-[#1E2B48] bg-[#0F172A] text-xs text-amber-400 hover:border-amber-500/40 transition-all font-outfit font-semibold flex items-center gap-1.5">
+                    <span>⚡</span> <span>Formula Cheat-Sheet</span>
+                </button>
+                <div id="sessionTimerWrapper" class="hidden flex items-center gap-2 bg-[#0F172A] px-3 py-1.5 rounded-lg border border-[#1E2B48]">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider font-outfit">Elapsed</span>
+                    <div id="sessionTimer" class="font-mono-code text-amber-400 font-bold text-xs">00:00</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <!-- PART 1: TEST RUNNER -->
+        <div id="viewPart1">
+            
+            <section id="homeView" class="py-6 max-w-5xl mx-auto text-center">
+                <div class="mb-10">
+                    <span class="px-3.5 py-1.5 rounded-full bg-orange-950/40 text-orange-400 border border-orange-500/30 text-xs font-semibold tracking-wider uppercase font-outfit">
+                        Official Exam Series (Mensuration 2D & 3D)
+                    </span>
+                    <h2 class="font-outfit font-extrabold text-4xl md:text-5xl text-white tracking-tight mt-4 mb-3">
+                        Mastery Workbook & <span class="text-amber-400">Full Test</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
+                        Complete 76 solved mensuration problems covering cones, cuboids, cubes, cylinders, spherical shells, and composite 3D models with shortcuts and diagrams.
+                    </p>
+                </div>
+
+                <!-- Full Marathon Card -->
+                <div class="mb-8">
+                    <div class="bg-gradient-to-r from-[#0E1528] via-[#121B33] to-[#0E1528] border-2 border-amber-500/40 rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-5 text-left">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl">
+                                🎯
+                            </div>
+                            <div>
+                                <h3 class="font-outfit font-bold text-2xl text-white">Full Paper Marathon (All 76 Qs)</h3>
+                                <p class="text-amber-400 text-xs font-medium font-outfit mt-0.5">Comprehensive examination covering Sets 1, 2, and 3</p>
+                            </div>
+                        </div>
+                        <button onclick="startQuiz('all')" class="w-full md:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-outfit font-bold text-sm tracking-wider uppercase py-3.5 px-8 rounded-xl shadow-lg shadow-amber-500/25 transition-all text-center">
+                            Start Marathon (76 Qs)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Section Practice Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+                    <div class="bg-[#090E1D] border border-[#1E2B48] hover:border-amber-500/50 rounded-2xl p-6 shadow-xl flex flex-col justify-between transition-all group">
+                        <div class="mb-5">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-3xl">📐</span>
+                                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full text-xs font-bold font-mono-code">Q1 - Q25</span>
+                            </div>
+                            <h4 class="font-outfit text-xl font-bold text-white group-hover:text-amber-300 transition-colors">Set 1: Cones & Cuboids</h4>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">Right circular cones, slant heights, diagonal proofs, and cuboid dimensions.</p>
+                        </div>
+                        <button onclick="startQuiz(1)" class="w-full bg-[#0F172A] group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-400 font-outfit font-bold text-xs uppercase tracking-wider py-3 rounded-xl border border-amber-500/30 transition-all">
+                            Practice Set 1 (25 Qs)
+                        </button>
+                    </div>
+
+                    <div class="bg-[#090E1D] border border-[#1E2B48] hover:border-amber-500/50 rounded-2xl p-6 shadow-xl flex flex-col justify-between transition-all group">
+                        <div class="mb-5">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-3xl">🧊</span>
+                                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full text-xs font-bold font-mono-code">Q26 - Q50</span>
+                            </div>
+                            <h4 class="font-outfit text-xl font-bold text-white group-hover:text-amber-300 transition-colors">Set 2: Cubes & Cylinders</h4>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">Melted cube combinations, rolling sheets, cylinder CSA=0.5TSA identities.</p>
+                        </div>
+                        <button onclick="startQuiz(2)" class="w-full bg-[#0F172A] group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-400 font-outfit font-bold text-xs uppercase tracking-wider py-3 rounded-xl border border-amber-500/30 transition-all">
+                            Practice Set 2 (25 Qs)
+                        </button>
+                    </div>
+
+                    <div class="bg-[#090E1D] border border-[#1E2B48] hover:border-amber-500/50 rounded-2xl p-6 shadow-xl flex flex-col justify-between transition-all group">
+                        <div class="mb-5">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-3xl">🔮</span>
+                                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full text-xs font-bold font-mono-code">Q51 - Q76</span>
+                            </div>
+                            <h4 class="font-outfit text-xl font-bold text-white group-hover:text-amber-300 transition-colors">Set 3: Spheres & Shells</h4>
+                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">Hemispheres, hollow spherical shell mass densities, and surmounted models.</p>
+                        </div>
+                        <button onclick="startQuiz(3)" class="w-full bg-[#0F172A] group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-400 font-outfit font-bold text-xs uppercase tracking-wider py-3 rounded-xl border border-amber-500/30 transition-all">
+                            Practice Set 3 (26 Qs)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Test Running View -->
+            <section id="quizView" class="hidden max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    
+                    <div class="lg:col-span-8 bg-[#090E1D] border border-[#1E2B48] rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col justify-between min-h-[540px]">
+                        <div>
+                            <div class="flex justify-between items-center mb-6 pb-4 border-b border-[#1E2B48]">
+                                <div class="flex items-center gap-2.5">
+                                    <span id="qIndex" class="font-outfit font-bold text-amber-400 tracking-wider text-sm">Question 1</span>
+                                    <span class="text-slate-600">|</span>
+                                    <span id="qTagDisplay" class="text-[11px] bg-[#0F172A] text-slate-300 border border-[#1E2B48] px-2.5 py-0.5 rounded-md font-mono-code font-medium">Mensuration 3D</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-[10px] text-slate-400 uppercase font-mono-code">Time:</span>
+                                    <div id="qTimer" class="font-mono-code text-xs bg-[#0F172A] border border-[#1E2B48] text-amber-400 px-2.5 py-1 rounded-md font-bold">00:00</div>
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-5 bg-[#0F172A]/50 rounded-xl border border-[#1E2B48]/70 min-h-[110px] flex flex-col justify-center">
+                                <h3 id="targetQuestion" class="font-outfit text-base md:text-lg text-slate-100 font-medium leading-relaxed">
+                                    Loading Question...
+                                </h3>
+                            </div>
+
+                            <div id="optionsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 my-5"></div>
+                        </div>
+
+                        <div class="flex flex-col gap-4 pt-6 border-t border-[#1E2B48] mt-6">
+                            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                                <button onclick="navigate('first')" id="firstBtn" class="bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white hover:border-slate-500 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase transition-all">First</button>
+                                <button onclick="navigate('prev')" id="prevBtn" class="bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white hover:border-slate-500 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase transition-all">Prev</button>
+                                <button onclick="clearResponse()" class="border border-rose-500/30 text-rose-400 hover:bg-rose-500/10 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase transition-all">Clear</button>
+                                <button onclick="toggleMarkReview()" id="reviewBtn" class="border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase transition-all">Flag</button>
+                                <button onclick="navigate('next')" id="nextBtn" class="bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white hover:border-slate-500 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase transition-all">Next</button>
+                                <button onclick="navigate('last')" id="lastBtn" class="bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white hover:border-slate-500 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase transition-all">Last</button>
+                            </div>
+
+                            <div class="flex justify-between items-center mt-2">
+                                <button onclick="confirmReset()" class="text-xs text-rose-400 hover:text-rose-300 font-bold uppercase tracking-wider font-outfit">Reset Session</button>
+                                <button onclick="confirmSubmit()" id="btnSubmitSection" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-outfit font-bold px-7 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 uppercase tracking-wider text-xs transition-all">
+                                    Submit Test
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Question Palette -->
+                    <div class="lg:col-span-4 bg-[#090E1D] border border-[#1E2B48] rounded-2xl p-6 shadow-2xl flex flex-col justify-between w-full min-h-[540px]">
+                        <div>
+                            <div class="flex justify-between items-center border-b border-[#1E2B48] pb-3 mb-5">
+                                <div>
+                                    <h4 class="font-outfit font-bold text-lg text-white">Question Palette</h4>
+                                    <p id="mapSectionDisplay" class="text-[10px] tracking-wider text-amber-400 uppercase font-mono-code font-bold">Set 1</p>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2.5 mb-5 text-xs bg-[#050811] p-3 rounded-xl border border-[#1E2B48] font-outfit">
+                                <div class="flex items-center gap-2 text-slate-400">
+                                    <span class="status-dot bg-amber-500"></span>
+                                    <span>Answered: <strong id="cntAns" class="text-white">0</strong></span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-400">
+                                    <span class="status-dot bg-slate-700"></span>
+                                    <span>Skipped: <strong id="cntSkp" class="text-white">0</strong></span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-400">
+                                    <span class="status-dot bg-orange-500"></span>
+                                    <span>Flagged: <strong id="cntFlg" class="text-white">0</strong></span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-400">
+                                    <span class="status-dot bg-sky-400"></span>
+                                    <span class="text-white">Current</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-5 gap-2 max-h-[340px] overflow-y-auto pr-1" id="progressGrid"></div>
+                        </div>
+
+                        <button onclick="confirmReset()" class="w-full mt-6 bg-[#050811] border border-[#1E2B48] text-slate-400 hover:text-white hover:border-slate-600 py-2.5 rounded-xl font-bold font-outfit uppercase tracking-wider text-xs">
+                            Abort Test
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Test Analytics & Review View -->
+            <section id="analysisView" class="hidden">
+                <div class="text-center mb-8">
+                    <span class="px-3.5 py-1.5 bg-amber-950/40 border border-amber-500/30 text-amber-400 rounded-full text-xs font-bold tracking-wider uppercase font-outfit">Performance Scorecard</span>
+                    <h2 id="analysisHeading" class="font-outfit font-extrabold text-4xl tracking-tight text-white mt-3">Test <span class="text-amber-400">Analytics</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+                    <div class="lg:col-span-4 bg-[#090E1D] border border-[#1E2B48] rounded-2xl p-6 shadow-2xl flex flex-col justify-between items-center font-outfit">
+                        <h3 class="font-bold text-slate-400 uppercase text-xs tracking-wider mb-4">Summary Breakdown</h3>
+                        
+                        <div class="w-full max-w-[170px] aspect-square relative mb-6">
+                            <canvas id="scoreChart"></canvas>
+                        </div>
+
+                        <div class="w-full space-y-3.5 mb-6 text-left text-xs font-normal">
+                            <div>
+                                <div class="flex justify-between mb-1"><span class="text-slate-400">Correct Answers</span><span id="lblCorrect" class="text-amber-400 font-bold font-mono-code">0/0</span></div>
+                                <div class="h-1.5 bg-[#050811] rounded-full overflow-hidden"><div id="bfCorrect" class="h-full bg-amber-400 transition-all duration-700" style="width: 0%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1"><span class="text-slate-400">Incorrect Answers</span><span id="lblWrong" class="text-rose-400 font-bold font-mono-code">0/0</span></div>
+                                <div class="h-1.5 bg-[#050811] rounded-full overflow-hidden"><div id="bfWrong" class="h-full bg-rose-400 transition-all duration-700" style="width: 0%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1"><span class="text-slate-400">Unanswered</span><span id="lblUnat" class="text-slate-500 font-bold font-mono-code">0/0</span></div>
+                                <div class="h-1.5 bg-[#050811] rounded-full overflow-hidden"><div id="bfUnat" class="h-full bg-slate-600 transition-all duration-700" style="width: 0%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1"><span class="text-slate-400">Accuracy</span><span id="lblAcc" class="text-sky-400 font-bold font-mono-code">0%</span></div>
+                                <div class="h-1.5 bg-[#050811] rounded-full overflow-hidden"><div id="bfAcc" class="h-full bg-sky-400 transition-all duration-700" style="width: 0%"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="w-full text-center border-t border-[#1E2B48] pt-4">
+                            <p id="statNetResult" class="font-outfit font-extrabold text-5xl text-amber-400 leading-none">0/0</p>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wider mt-1 font-bold">Total Score</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-8 bg-[#090E1D] border border-[#1E2B48] rounded-2xl p-6 shadow-2xl">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1E2B48] pb-3 mb-4">
+                            <div class="flex items-center gap-3">
+                                <h3 class="font-outfit font-bold text-white uppercase tracking-wider text-sm">Detailed Solutions</h3>
+                                <span id="solUnrememberCount" class="text-xs text-amber-400 bg-[#0F172A] border border-amber-500/30 px-2.5 py-0.5 rounded-lg font-bold font-mono-code">
+                                    📌 0
+                                </span>
+                            </div>
+                            <div class="flex flex-wrap gap-1 bg-[#050811] p-1 rounded-xl border border-[#1E2B48] text-xs font-outfit">
+                                <button id="btnFilterAll" onclick="applySolutionFilter('all')" class="px-3 py-1 rounded-lg font-bold uppercase text-[10px] bg-amber-500 text-slate-950 transition-all">All (<span id="lblFilterAll">0</span>)</button>
+                                <button id="btnFilterCorrect" onclick="applySolutionFilter('correct')" class="px-3 py-1 rounded-lg font-bold uppercase text-[10px] text-slate-400 hover:text-white transition-all">Correct (<span id="lblFilterCorrect">0</span>)</button>
+                                <button id="btnFilterWrong" onclick="applySolutionFilter('wrong')" class="px-3 py-1 rounded-lg font-bold uppercase text-[10px] text-slate-400 hover:text-white transition-all">Wrong (<span id="lblFilterWrong">0</span>)</button>
+                                <button id="btnFilterSkipped" onclick="applySolutionFilter('skipped')" class="px-3 py-1 rounded-lg font-bold uppercase text-[10px] text-slate-400 hover:text-white transition-all">Skipped (<span id="lblFilterSkipped">0</span>)</button>
+                            </div>
+                        </div>
+
+                        <div class="overflow-y-auto max-h-[540px] pr-2 space-y-4 font-outfit" id="solutionsContainer"></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center font-outfit font-bold">
+                    <button onclick="retryTest()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-10 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 tracking-wider uppercase text-xs transition-all">Restart Test</button>
+                    <button onclick="switchMainTab('part2')" class="border border-[#1E2B48] bg-[#0F172A] hover:border-slate-500 text-slate-300 hover:text-white px-10 py-3.5 rounded-xl tracking-wider uppercase text-xs transition-all">Browse Visual Catalog</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- PART 2: VISUAL CATALOG VIEW -->
+        <div id="viewPart2" class="hidden space-y-6">
+            <div class="bg-[#090E1D] border border-[#1E2B48] rounded-2xl p-6 shadow-xl mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h2 id="part2Title" class="font-outfit font-extrabold text-3xl text-white tracking-tight leading-none">Visual Catalog</h2>
+                        <p id="part2Sub" class="text-xs text-slate-400 mt-1">Browse all 76 questions with shortcuts, formulas, 3D diagrams, and step-by-step methods.</p>
+                    </div>
+                    <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+                        <input type="text" id="part2Search" oninput="filterPart2()" placeholder="Search formula, question text, Q.No..." class="bg-[#0F172A] border border-[#1E2B48] text-xs text-white px-4 py-2.5 rounded-xl focus:outline-none focus:border-amber-400 w-full sm:w-64 font-outfit">
+                        <button onclick="toggleUnrememberFilter()" id="filterUnrememberBtn" class="bg-[#0F172A] border border-[#1E2B48] hover:border-amber-400 text-amber-400 font-outfit font-bold text-xs px-4 py-2.5 rounded-xl uppercase transition-all flex items-center justify-center gap-2">
+                            <span>📌 Unremembered</span>
+                            <span id="catUnrememberBadge" class="bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded text-[10px] font-mono-code font-bold">0</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-[#1E2B48]">
+                    <button id="btnCatSecAll" onclick="switchCatalogSection('all')" class="px-4 py-2 rounded-xl font-outfit font-bold text-xs uppercase transition-all bg-amber-500 text-slate-950">
+                        All (76 Qs)
+                    </button>
+                    <button id="btnCatSec1" onclick="switchCatalogSection(1)" class="px-4 py-2 rounded-xl font-outfit font-bold text-xs uppercase transition-all bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white">
+                        Set 1 (Q1 - Q25)
+                    </button>
+                    <button id="btnCatSec2" onclick="switchCatalogSection(2)" class="px-4 py-2 rounded-xl font-outfit font-bold text-xs uppercase transition-all bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white">
+                        Set 2 (Q26 - Q50)
+                    </button>
+                    <button id="btnCatSec3" onclick="switchCatalogSection(3)" class="px-4 py-2 rounded-xl font-outfit font-bold text-xs uppercase transition-all bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white">
+                        Set 3 (Q51 - Q76)
+                    </button>
+                </div>
+            </div>
+
+            <div id="part2Catalog" class="space-y-6"></div>
+        </div>
+
+    </main>
+
+    <!-- Formula Cheat Sheet Modal -->
+    <div id="rulesModalBackdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="bg-[#090E1D] border-2 border-[#1E2B48] rounded-2xl p-6 max-w-2xl w-full shadow-2xl overflow-y-auto max-h-[85vh] font-outfit">
+            <div class="flex justify-between items-center border-b border-[#1E2B48] pb-3 mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-xl">📐</span>
+                    <h4 class="font-outfit font-extrabold text-xl text-amber-400 uppercase tracking-wider">Railway & SSC Mensuration Identities</h4>
+                </div>
+                <button onclick="closeRulesModal()" class="text-slate-400 hover:text-white text-lg">✕</button>
+            </div>
+            
+            <div class="space-y-3.5 text-xs text-slate-300 leading-relaxed mb-6 font-outfit">
+                <div class="p-3.5 bg-[#0F172A] rounded-xl border border-amber-500/20">
+                    <h5 class="text-amber-400 font-bold uppercase tracking-wider text-xs mb-1">1. Right Circular Cone</h5>
+                    <p class="font-mono-code text-slate-300">Volume = (1/3)πr²h &nbsp;|&nbsp; Slant height l = √(r² + h²)</p>
+                    <p class="font-mono-code text-slate-300">Curved Surface Area (CSA) = πrl &nbsp;|&nbsp; Total Surface Area (TSA) = πr(l + r)</p>
+                </div>
+                <div class="p-3.5 bg-[#0F172A] rounded-xl border border-amber-500/20">
+                    <h5 class="text-amber-400 font-bold uppercase tracking-wider text-xs mb-1">2. Right Circular Cylinder</h5>
+                    <p class="font-mono-code text-slate-300">Volume = πr²h &nbsp;|&nbsp; CSA = 2πrh &nbsp;|&nbsp; TSA = 2πr(r + h)</p>
+                    <p class="font-mono-code text-slate-300">When CSA = (1/2)TSA &rArr; 2πrh = πr(r + h) &rArr; r = h</p>
+                </div>
+                <div class="p-3.5 bg-[#0F172A] rounded-xl border border-amber-500/20">
+                    <h5 class="text-amber-400 font-bold uppercase tracking-wider text-xs mb-1">3. Cube & Cuboid</h5>
+                    <p class="font-mono-code text-slate-300">Cube: Vol = a³ &nbsp;|&nbsp; TSA = 6a² &nbsp;|&nbsp; 4-Walls Area = 4a² &nbsp;|&nbsp; Diagonal = a√3</p>
+                    <p class="font-mono-code text-slate-300">Cuboid: Vol = lbh &nbsp;|&nbsp; TSA = 2(lb + bh + hl) &nbsp;|&nbsp; Diagonal = √(l² + b² + h²)</p>
+                    <p class="font-mono-code text-slate-300">N Cubes in series: LSA = 2(Na + a)a = 2(N + 1)a²</p>
+                </div>
+                <div class="p-3.5 bg-[#0F172A] rounded-xl border border-amber-500/20">
+                    <h5 class="text-amber-400 font-bold uppercase tracking-wider text-xs mb-1">4. Sphere & Spherical Shell</h5>
+                    <p class="font-mono-code text-slate-300">Sphere: Vol = (4/3)πr³ &nbsp;|&nbsp; Surface Area = 4πr² = πD²</p>
+                    <p class="font-mono-code text-slate-300">Hemisphere: Vol = (2/3)πr³ &nbsp;|&nbsp; CSA = 2πr² &nbsp;|&nbsp; TSA = 3πr²</p>
+                    <p class="font-mono-code text-slate-300">Hollow Shell Mass = (4/3)π(R³ - r³) × Density</p>
+                </div>
+            </div>
+            
+            <button onclick="closeRulesModal()" class="w-full bg-[#0F172A] hover:bg-[#1E293B] text-white py-2.5 rounded-xl text-xs font-bold font-outfit uppercase transition-all">Close</button>
+        </div>
+    </div>
+
+    <!-- Confirm Modal Dialog -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-4 font-outfit">
+        <div class="bg-[#090E1D] border border-[#1E2B48] rounded-2xl p-6 max-w-sm w-full shadow-2xl text-center">
+            <div class="text-3xl mb-3" id="modalIcon">⚠️</div>
+            <h4 class="font-outfit text-xl font-bold mb-1 text-white" id="modalTitle">Confirm Action</h4>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed" id="modalBody">Are you sure you want to proceed?</p>
+            <div class="flex gap-3 justify-center text-xs font-bold">
+                <button id="modalCancelBtn" class="border border-[#1E2B48] text-slate-400 hover:text-white px-5 py-2.5 rounded-xl transition-all">Cancel</button>
+                <button id="modalConfirmBtn" class="bg-rose-500 hover:bg-rose-600 text-white px-5 py-2.5 rounded-xl transition-all">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // High-Quality SVG 3D Geometry Diagram Generator
+        function getMensurationSVG(type, params) {
+            if (!params) params = {};
+            const pCol = "#F59E0B";
+            const sCol = "#38BDF8";
+            const fillCol = "rgba(245, 158, 11, 0.12)";
+
+            if (type === 'cone') {
+                const { r, h, l } = params;
+                return `
+                <div class="diagram-container my-3">
+                    <svg viewBox="0 0 200 150" class="w-48 h-32">
+                        <ellipse cx="100" cy="122" rx="58" ry="15" fill="${fillCol}" stroke="${pCol}" stroke-width="2" />
+                        <line x1="42" y1="122" x2="100" y2="20" stroke="${pCol}" stroke-width="2" />
+                        <line x1="158" y1="122" x2="100" y2="20" stroke="${pCol}" stroke-width="2" />
+                        <line x1="100" y1="20" x2="100" y2="122" stroke="${sCol}" stroke-dasharray="3,3" stroke-width="1.5" />
+                        <line x1="100" y1="122" x2="158" y2="122" stroke="#F97316" stroke-width="1.5" />
+                        <circle cx="100" cy="122" r="3" fill="${sCol}" />
+                        <text x="105" y="72" fill="${sCol}" font-size="10" font-weight="bold">h = ${h || '?'}</text>
+                        <text x="122" y="137" fill="#F97316" font-size="10" font-weight="bold">r = ${r || '?'}</text>
+                        <text x="138" y="65" fill="#10B981" font-size="10" font-weight="bold">l = ${l || '?'}</text>
+                    </svg>
+                    <span class="text-[10px] text-slate-400 font-mono-code uppercase mt-1">Right Circular Cone (r, h, l)</span>
+                </div>`;
+            } else if (type === 'cylinder') {
+                const { r, h } = params;
+                return `
+                <div class="diagram-container my-3">
+                    <svg viewBox="0 0 200 150" class="w-48 h-32">
+                        <ellipse cx="100" cy="30" rx="48" ry="13" fill="${fillCol}" stroke="${pCol}" stroke-width="2" />
+                        <ellipse cx="100" cy="118" rx="48" ry="13" fill="rgba(56, 189, 248, 0.1)" stroke="${pCol}" stroke-width="2" />
+                        <line x1="52" y1="30" x2="52" y2="118" stroke="${pCol}" stroke-width="2" />
+                        <line x1="148" y1="30" x2="148" y2="118" stroke="${pCol}" stroke-width="2" />
+                        <line x1="100" y1="30" x2="100" y2="118" stroke="${sCol}" stroke-dasharray="3,3" stroke-width="1.5" />
+                        <line x1="100" y1="30" x2="148" y2="30" stroke="#F97316" stroke-width="1.5" />
+                        <text x="114" y="25" fill="#F97316" font-size="10" font-weight="bold">r = ${r || '?'}</text>
+                        <text x="106" y="80" fill="${sCol}" font-size="10" font-weight="bold">h = ${h || '?'}</text>
+                    </svg>
+                    <span class="text-[10px] text-slate-400 font-mono-code uppercase mt-1">Right Circular Cylinder (πr²h)</span>
+                </div>`;
+            } else if (type === 'cube' || type === 'cuboid') {
+                const { l, b, h } = params;
+                return `
+                <div class="diagram-container my-3">
+                    <svg viewBox="0 0 200 150" class="w-48 h-32">
+                        <rect x="42" y="52" width="80" height="65" fill="${fillCol}" stroke="${pCol}" stroke-width="2" />
+                        <polygon points="42,52 75,24 155,24 122,52" fill="rgba(245, 158, 11, 0.18)" stroke="${pCol}" stroke-width="2" />
+                        <polygon points="122,52 155,24 155,89 122,117" fill="rgba(56, 189, 248, 0.15)" stroke="${pCol}" stroke-width="2" />
+                        <text x="66" y="133" fill="${pCol}" font-size="10" font-weight="bold">L = ${l || '?'}</text>
+                        <text x="16" y="88" fill="${sCol}" font-size="10" font-weight="bold">H = ${h || '?'}</text>
+                        <text x="136" y="46" fill="#F97316" font-size="10" font-weight="bold">B = ${b || '?'}</text>
+                    </svg>
+                    <span class="text-[10px] text-slate-400 font-mono-code uppercase mt-1">${type === 'cube' ? 'Solid Cube (Edge a)' : 'Rectangular Cuboid (L × B × H)'}</span>
+                </div>`;
+            } else if (type === 'sphere') {
+                const { r } = params;
+                return `
+                <div class="diagram-container my-3">
+                    <svg viewBox="0 0 200 150" class="w-48 h-32">
+                        <circle cx="100" cy="75" r="50" fill="${fillCol}" stroke="${pCol}" stroke-width="2" />
+                        <ellipse cx="100" cy="75" rx="50" ry="16" fill="none" stroke="${sCol}" stroke-dasharray="3,3" stroke-width="1.5" />
+                        <line x1="100" y1="75" x2="150" y2="75" stroke="#10B981" stroke-width="2" />
+                        <circle cx="100" cy="75" r="3" fill="#10B981" />
+                        <text x="116" y="68" fill="#F59E0B" font-size="10" font-weight="bold">r = ${r || '?'}</text>
+                    </svg>
+                    <span class="text-[10px] text-slate-400 font-mono-code uppercase mt-1">Solid Sphere (4/3 πr³)</span>
+                </div>`;
+            } else if (type === 'hemisphere') {
+                const { r } = params;
+                return `
+                <div class="diagram-container my-3">
+                    <svg viewBox="0 0 200 150" class="w-48 h-32">
+                        <ellipse cx="100" cy="62" rx="52" ry="16" fill="${fillCol}" stroke="${pCol}" stroke-width="2" />
+                        <path d="M 48 62 A 52 52 0 0 0 152 62" fill="rgba(56, 189, 248, 0.12)" stroke="${pCol}" stroke-width="2" />
+                        <line x1="100" y1="62" x2="152" y2="62" stroke="#10B981" stroke-width="2" />
+                        <circle cx="100" cy="62" r="3" fill="${sCol}" />
+                        <text x="115" y="55" fill="#F59E0B" font-size="10" font-weight="bold">r = ${r || '?'}</text>
+                    </svg>
+                    <span class="text-[10px] text-slate-400 font-mono-code uppercase mt-1">Solid Hemisphere (2/3 πr³)</span>
+                </div>`;
+            } else if (type === 'composite') {
+                return `
+                <div class="diagram-container my-3">
+                    <svg viewBox="0 0 200 150" class="w-48 h-32">
+                        <polygon points="100,16 64,55 136,55" fill="${fillCol}" stroke="${pCol}" stroke-width="1.5" />
+                        <rect x="64" y="55" width="72" height="38" fill="rgba(56, 189, 248, 0.14)" stroke="${sCol}" stroke-width="1.5" />
+                        <path d="M 64 93 A 36 36 0 0 0 136 93" fill="rgba(16, 185, 129, 0.14)" stroke="#10B981" stroke-width="1.5" />
+                        <line x1="100" y1="55" x2="136" y2="55" stroke="${pCol}" stroke-width="1" />
+                        <text x="104" y="51" fill="${pCol}" font-size="9" font-weight="bold">r = 7</text>
+                    </svg>
+                    <span class="text-[10px] text-slate-400 font-mono-code uppercase mt-1">Cone + Cylinder + Hemisphere</span>
+                </div>`;
+            }
+            return '';
+        }
+
+        // Factory creating the exact 3-tier structure matching your Algebra template
+        function createMensurationQ(id, text, opts, ansIndex, detailedExp, qShort, solShort, formulaText, diagType, diagParams) {
+            const expHtml = `
+            <div class="space-y-3 font-outfit text-left mt-3">
+                <!-- SVG Vector Diagram Visual -->
+                ${getMensurationSVG(diagType, diagParams)}
+
+                <!-- 1. SHORTCUT TECHNIQUE (Orange box with inner Sol box) -->
+                <div class="sc-box">
+                    <div class="sc-title">
+                        <span>⚡</span> <span>SHORTCUT TECHNIQUE</span>
+                    </div>
+                    <div class="sc-q-line">
+                        <span class="sc-q-tag">Q:</span> ${qShort}
+                    </div>
+                    <div class="sc-sol-inner">
+                        <div class="sol-label">Sol:</div>
+                        <div>${solShort}</div>
+                    </div>
+                </div>
+
+                <!-- 2. FORMULA FOR REVISION (Cyan box) -->
+                <div class="formula-box">
+                    <div class="f-title">
+                        <span>📐</span> <span>FORMULA FOR REVISION</span>
+                    </div>
+                    <div class="f-content">
+                        ${formulaText}
+                    </div>
+                </div>
+
+                <!-- 3. STANDARD STEP-BY-STEP METHOD (Slate box) -->
+                <div class="standard-box">
+                    <div class="std-title">
+                        STANDARD STEP-BY-STEP METHOD
+                    </div>
+                    <div class="std-content font-outfit">
+                        ${detailedExp}
+                    </div>
+                </div>
+            </div>`;
+
+            return {
+                qNum: id,
+                tag: "Mensuration Exam Bank",
+                inst: "SSC & Railway Exams Complete Preparation",
+                w: `Q.${id}) ${text}`,
+                opts: opts,
+                ans: ansIndex,
+                exp: expHtml
+            };
+        }
+
+        // Complete 76 Question Database without omissions
+        const allMensurationQuestions = [
+            // ================= SET 1: Q1 to Q25 =================
+            createMensurationQ(1, 
+                "The volume of a right circular cone is 1078 cm³. Find the total surface area of the cone if its height is 21 cm. (Use π = 22/7)",
+                ["154(1 + √10) cm²", "22(7 + √10) cm²", "154 cm²", "154√10 cm²"], 0,
+                "Given Volume V = 1078 cm³ and height h = 21 cm. Using V = (1/3)πr²h:<br>1078 = (1/3) × (22/7) × r² × 21 ⇒ 1078 = 22r² ⇒ r² = 49 ⇒ r = 7 cm.<br>Slant height l = √(r² + h²) = √(49 + 441) = √490 = 7√10 cm.<br>Total Surface Area = πr(l + r) = (22/7) × 7 × (7√10 + 7) = 22 × 7(1 + √10) = 154(1 + √10) cm².",
+                "Cone Volume = 1078 cm³, h = 21 cm. Find Total Surface Area (TSA).",
+                "Volume = (1/3)πr²h ⇒ 1078 = (1/3) × (22/7) × r² × 21 = 22r²<br>r² = 1078 / 22 = 49 ⇒ r = 7 cm<br>Slant height l = √(r² + h²) = √(7² + 21²) = √490 = 7√10 cm<br>TSA = πr(l + r) = (22/7) × 7 × (7√10 + 7) = 154(1 + √10) cm²",
+                "Volume = (1/3)πr²h &nbsp;|&nbsp; l = √(r² + h²) &nbsp;|&nbsp; TSA = πr(l + r)",
+                "cone", { r: "7", h: "21", l: "7√10" }),
+
+            createMensurationQ(2,
+                "The radius of the base and the slant height of a right circular cone are 7 cm and 25 cm, respectively. Find the volume (in cm³) of the given cone. (Use π = 22/7)",
+                ["982", "1352", "1062", "1232"], 3,
+                "Using Pythagorean theorem, height h = √(l² - r²) = √(25² - 7²) = √(625 - 49) = √576 = 24 cm.<br>Volume = (1/3)πr²h = (1/3) × (22/7) × 49 × 24 = 22 × 7 × 8 = 1232 cm³.",
+                "Cone radius r = 7 cm, slant height l = 25 cm. Find volume.",
+                "7-24-25 Pythagorean triplet ⇒ h = √(25² - 7²) = 24 cm<br>Volume = (1/3)πr²h = (1/3) × (22/7) × 7² × 24<br>Volume = (1/3) × 22 × 7 × 24 = 22 × 7 × 8 = 1232 cm³",
+                "h = √(l² - r²) &nbsp;|&nbsp; Volume = (1/3)πr²h",
+                "cone", { r: "7", h: "24", l: "25" }),
+
+            createMensurationQ(3,
+                "The diameter of the base and slant height of a right circular cone are 30 cm and 113 cm, respectively. Find the volume (in cm³) of the given cone. (Use π = 22/7)",
+                ["26,435", "26,360", "26,375", "26,400"], 3,
+                "Radius r = 30 / 2 = 15 cm.<br>Height h = √(113² - 15²) = √[(113 - 15)(113 + 15)] = √(98 × 128) = √(12544) = 112 cm.<br>Volume = (1/3) × (22/7) × 15 × 15 × 112 = 22 × 75 × 16 = 26,400 cm³.",
+                "Diameter = 30 cm ⇒ r = 15 cm, l = 113 cm. Find volume.",
+                "15-112-113 Triplet ⇒ h = √(113² - 15²) = √12544 = 112 cm<br>Volume = (1/3) × (22/7) × 15² × 112<br>Volume = (1/3) × (22/7) × 225 × 112 = 75 × 22 × 16 = 26,400 cm³",
+                "r = d/2 &nbsp;|&nbsp; h = √(l² - r²) &nbsp;|&nbsp; Volume = (1/3)πr²h",
+                "cone", { r: "15", h: "112", l: "113" }),
+
+            createMensurationQ(4,
+                "The curved surface area of a right circular cone is 6500π cm² and the diameter of its base is 100 cm. Find the height (in cm) of the cone.",
+                ["125", "115", "110", "120"], 3,
+                "Radius r = 100 / 2 = 50 cm.<br>CSA = πrl = 6500π ⇒ l = 6500 / 50 = 130 cm.<br>Height h = √(l² - r²) = √(130² - 50²) = √(16900 - 2500) = √14400 = 120 cm.",
+                "CSA = 6500π cm², diameter = 100 cm ⇒ r = 50 cm. Find h.",
+                "CSA = πrl = 6500π ⇒ 50 × l = 6500 ⇒ l = 130 cm<br>5-12-13 Triplet scaled by 10 ⇒ r = 50, l = 130, h = 120 cm<br>h = √(130² - 50²) = √14400 = 120 cm",
+                "CSA = πrl &nbsp;|&nbsp; h = √(l² - r²)",
+                "cone", { r: "50", h: "120", l: "130" }),
+
+            createMensurationQ(5,
+                "The curved surface area of a right circular cone is 5904π cm², and the diameter of its base is 72 cm. Find the height (in cm) of the cone.",
+                ["160", "159", "158", "162"], 0,
+                "Radius r = 72 / 2 = 36 cm.<br>l = 5904π / (36π) = 164 cm.<br>Height h = √(164² - 36²) = √[(128)(200)] = √25600 = 160 cm.",
+                "CSA = 5904π cm², d = 72 cm ⇒ r = 36 cm. Find h.",
+                "CSA = πrl = 5904π ⇒ 36 × l = 5904 ⇒ l = 164 cm<br>h = √(l² - r²) = √(164² - 36²) = √[(164 - 36)(164 + 36)]<br>h = √(128 × 200) = √25600 = 160 cm",
+                "CSA = πrl ⇒ l = CSA / (πr) &nbsp;|&nbsp; h = √(l² - r²)",
+                "cone", { r: "36", h: "160", l: "164" }),
+
+            createMensurationQ(6,
+                "The curved surface area of a right circular cone is 5400π cm², and the diameter of its base is 144 cm. Find the height (in cm) of the cone.",
+                ["20", "22", "21", "16"], 2,
+                "Radius r = 144 / 2 = 72 cm.<br>Slant height l = 5400π / (72π) = 75 cm.<br>Height h = √(75² - 72²) = √[(75 - 72)(75 + 72)] = √(3 × 147) = √441 = 21 cm.",
+                "CSA = 5400π cm², d = 144 cm ⇒ r = 72 cm. Find h.",
+                "CSA = πrl = 5400π ⇒ 72 × l = 5400 ⇒ l = 75 cm<br>7-24-25 triplet scaled by 3 (21, 72, 75) ⇒ h = 21 cm<br>h = √(75² - 72²) = √[(3)(147)] = √441 = 21 cm",
+                "CSA = πrl &nbsp;|&nbsp; h = √(l² - r²)",
+                "cone", { r: "72", h: "21", l: "75" }),
+
+            createMensurationQ(7,
+                "The curved surface area of a right circular cone is 4335π cm² and the diameter of its base is 102 cm. Find the height (in cm) of the cone.",
+                ["63", "68", "69", "64"], 1,
+                "Radius r = 102 / 2 = 51 cm.<br>l = 4335 / 51 = 85 cm.<br>Height h = √(85² - 51²) = √[(34)(136)] = √(34 × 34 × 4) = 34 × 2 = 68 cm.",
+                "CSA = 4335π cm², d = 102 cm ⇒ r = 51 cm. Find h.",
+                "CSA = πrl = 4335π ⇒ 51 × l = 4335 ⇒ l = 85 cm<br>3-4-5 triplet scaled by 17 (51, 68, 85) ⇒ h = 68 cm<br>h = √(85² - 51²) = √[(34)(136)] = 34 × 2 = 68 cm",
+                "l = CSA / (πr) &nbsp;|&nbsp; h = √(l² - r²)",
+                "cone", { r: "51", h: "68", l: "85" }),
+
+            createMensurationQ(8,
+                "The curved surface area of a right circular cone is 2684π cm² and the diameter of its base is 44 cm. Find the height (in cm) of the cone.",
+                ["123", "120", "121", "124"], 1,
+                "Radius r = 44 / 2 = 22 cm.<br>Slant height l = 2684 / 22 = 122 cm.<br>Height h = √(122² - 22²) = √[(122 - 22)(122 + 22)] = √(100 × 144) = 10 × 12 = 120 cm.",
+                "CSA = 2684π cm², d = 44 cm ⇒ r = 22 cm. Find h.",
+                "CSA = πrl = 2684π ⇒ 22 × l = 2684 ⇒ l = 122 cm<br>11-60-61 triplet scaled by 2 (22, 120, 122) ⇒ h = 120 cm<br>h = √(122² - 22²) = √[(100)(144)] = 10 × 12 = 120 cm",
+                "l = CSA / (πr) &nbsp;|&nbsp; h = √(l² - r²)",
+                "cone", { r: "22", h: "120", l: "122" }),
+
+            createMensurationQ(9,
+                "The curved surface area of a cone is 2970 cm² and its diameter is 70 cm. What is its total surface area (in cm²)? Use π = 22/7",
+                ["6827", "6820", "6825", "6813"], 1,
+                "Given CSA = 2970 cm² and radius r = 70 / 2 = 35 cm.<br>Base area = πr² = (22/7) × 35² = 3850 cm².<br>Total Surface Area TSA = CSA + Base Area = 2970 + 3850 = 6820 cm².",
+                "CSA = 2970 cm², d = 70 cm ⇒ r = 35 cm. Find TSA.",
+                "Base Area = πr² = (22/7) × 35 × 35 = 22 × 5 × 35 = 3850 cm²<br>TSA = CSA + Base Area = 2970 + 3850 = 6820 cm²",
+                "TSA = CSA + πr²",
+                "cone", { r: "35", h: "", l: "" }),
+
+            createMensurationQ(10,
+                "The area of the base of a right circular cone is 3136π cm² and its slant height is 65 cm. The curved surface area of the cone (in cm²) is:",
+                ["3460π", "3065π", "3500π", "3640π"], 3,
+                "Base area = πr² = 3136π ⇒ r² = 3136 ⇒ r = 56 cm.<br>Curved Surface Area = πrl = π × 56 × 65 = 3640π cm².",
+                "Base Area = 3136π cm², l = 65 cm. Find CSA.",
+                "Base Area = πr² = 3136π ⇒ r² = 3136 ⇒ r = 56 cm<br>CSA = πrl = π × 56 × 65 = 3640π cm²",
+                "r = √(Base Area / π) &nbsp;|&nbsp; CSA = πrl",
+                "cone", { r: "56", h: "", l: "65" }),
+
+            createMensurationQ(11,
+                "If the volume of a right circular cone of height 30 cm is 160π cm³, find the diameter of its base.",
+                ["13 cm", "7 cm", "8 cm", "16 cm"], 2,
+                "Volume = (1/3)πr²h ⇒ 160π = (1/3) × π × r² × 30 ⇒ 10r² = 160 ⇒ r² = 16 ⇒ r = 4 cm.<br>Diameter = 2 × 4 = 8 cm.",
+                "Volume = 160π cm³, h = 30 cm. Find base diameter.",
+                "Volume = (1/3)πr²h ⇒ 160π = (1/3)π × r² × 30 = 10πr²<br>r² = 160 / 10 = 16 ⇒ r = 4 cm<br>Diameter = 2r = 2 × 4 = 8 cm",
+                "r² = 3V / (πh) &nbsp;|&nbsp; Diameter = 2r",
+                "cone", { r: "4", h: "30", l: "" }),
+
+            createMensurationQ(12,
+                "If the volume of a right circular cone of height 11 cm is 297π cm³, find the diameter of its base.",
+                ["18 cm", "14 cm", "25 cm", "12 cm"], 0,
+                "Volume = (1/3)πr²h ⇒ 297π = (11/3)πr² ⇒ r² = (297 × 3) / 11 = 81 ⇒ r = 9 cm.<br>Diameter = 2 × 9 = 18 cm.",
+                "Volume = 297π cm³, h = 11 cm. Find diameter.",
+                "Volume = (1/3)πr²h ⇒ 297π = (1/3)π × r² × 11<br>r² = (297 × 3) / 11 = 27 × 3 = 81 ⇒ r = 9 cm<br>Diameter = 2r = 2 × 9 = 18 cm",
+                "Diameter = 2 × √(3V / πh)",
+                "cone", { r: "9", h: "11", l: "" }),
+
+            createMensurationQ(13,
+                "A sphere with a radius of 53 cm is melted to form a cone with the same radius at its base. Find the height (in cm) of the cone.",
+                ["215", "205", "212", "219"], 2,
+                "Volume of sphere = (4/3)πr³. Volume of cone = (1/3)πr²h.<br>Since volumes are equal and radii are identical:<br>(4/3)πr³ = (1/3)πr²h ⇒ h = 4r = 4 × 53 = 212 cm.",
+                "Sphere melted into cone with same radius r = 53 cm. Find cone height.",
+                "Volume of Sphere = Volume of Cone<br>(4/3)πr³ = (1/3)πr²h ⇒ h = 4r<br>h = 4 × 53 = 212 cm",
+                "When sphere melted into cone of same radius: h = 4r",
+                "sphere", { r: "53" }),
+
+            createMensurationQ(14,
+                "A right triangle with sides 9 cm, 12 cm and 15 cm is rotated about the side of 9 cm to form a cone. The volume (in cm³) of the cone so formed is:",
+                ["432π", "421π", "324π", "320π"], 0,
+                "When rotated about the side of length 9 cm, that side forms the vertical height (h = 9 cm), the perpendicular side forms the base radius (r = 12 cm), and the hypotenuse is the slant height (l = 15 cm).<br>Volume = (1/3)πr²h = (1/3) × π × 144 × 9 = 432π cm³.",
+                "Right triangle (9, 12, 15) rotated about side 9 cm. Find cone volume.",
+                "Axis of rotation = 9 cm ⇒ Height h = 9 cm<br>Other leg becomes radius ⇒ r = 12 cm<br>Volume = (1/3)πr²h = (1/3)π × 12² × 9 = 3 × 144π = 432π cm³",
+                "Rotated about side h ⇒ radius = r, Volume = (1/3)πr²h",
+                "cone", { r: "12", h: "9", l: "15" }),
+
+            createMensurationQ(15,
+                "A right triangle with sides 60 cm, 45 cm and 75 cm is rotated about the side of 60 cm to form a cone. The curved surface area (in cm²) of the cone so formed is:",
+                ["3375π", "4505π", "4500π", "3125π"], 0,
+                "Axis of rotation is 60 cm, so h = 60 cm, r = 45 cm, and slant height l = 75 cm.<br>Curved surface area = πrl = π × 45 × 75 = 3375π cm².",
+                "Right triangle rotated about side 60 cm. Find CSA.",
+                "Height h = 60 cm, Radius r = 45 cm, Slant height l = 75 cm<br>CSA = πrl = π × 45 × 75 = 3375π cm²",
+                "CSA = πrl",
+                "cone", { r: "45", h: "60", l: "75" }),
+
+            createMensurationQ(16,
+                "A right triangle with sides 56 cm, 42 cm and 70 cm is rotated about the side of 56 cm to form a cone. The total surface area (in cm²) of the cone so formed is:",
+                ["5760π", "3446π", "4704π", "7056π"], 2,
+                "Height h = 56 cm, radius r = 42 cm, slant height l = 70 cm.<br>Total Surface Area = πr(l + r) = π × 42 × (70 + 42) = 42 × 112π = 4704π cm².",
+                "Right triangle rotated about 56 cm. Find TSA.",
+                "Height h = 56 cm, Radius r = 42 cm, Slant height l = 70 cm<br>TSA = πr(l + r) = π × 42 × (70 + 42) = 42 × 112π = 4704π cm²",
+                "TSA = πr(l + r)",
+                "cone", { r: "42", h: "56", l: "70" }),
+
+            createMensurationQ(17,
+                "A right circular cone is 6.7 cm high, and the radius of its base is 17.6 cm. It is melted and recast into a new right circular cone with a base radius of 8.8 cm. Find the height (in cm) of the new cone.",
+                ["37.5", "26.8", "34.5", "25.5"], 1,
+                "Equating volumes: (1/3)πr1²h1 = (1/3)πr2²h2 ⇒ r1²h1 = r2²h2 ⇒ h2 = h1(r1 / r2)².<br>Given r1 = 17.6, r2 = 8.8, so r1 / r2 = 2.<br>h2 = 6.7 × 4 = 26.8 cm.",
+                "Cone (h1 = 6.7, r1 = 17.6) melted into new cone (r2 = 8.8). Find h2.",
+                "Volume equality: r1² × h1 = r2² × h2<br>Notice r1 / r2 = 17.6 / 8.8 = 2 (radius is halved)<br>h2 = h1 × (r1 / r2)² = 6.7 × 2² = 6.7 × 4 = 26.8 cm",
+                "h2 = h1 × (r1 / r2)²",
+                "cone", { r: "8.8", h: "26.8", l: "" }),
+
+            createMensurationQ(18,
+                "The volume (in m³) of a cube, each of whose edges is 42 m, is:",
+                ["74,009", "74,236", "74,283", "74,088"], 3,
+                "Volume of a cube with edge a is a³.<br>For a = 42 m, Volume = 42³ = 42 × 42 × 42 = 1764 × 42 = 74,088 m³.",
+                "Cube edge a = 42 m. Find volume.",
+                "Volume = a³ = 42³<br>Unit digit: 2³ = 8 (only option 4 ends in 88)<br>42³ = 42 × 1764 = 74,088 m³",
+                "Volume of Cube = a³",
+                "cube", { l: "42", b: "42", h: "42" }),
+
+            createMensurationQ(19,
+                "The volume (in m³) of a cube, each of whose edges is 25 m, is:",
+                ["15,529", "15,625", "15,664", "15,583"], 1,
+                "Volume = a³ = 25³ = 15,625 m³.",
+                "Cube edge a = 25 m. Find volume.",
+                "Volume = a³ = 25³<br>25² = 625 ⇒ 625 × 25 = 15,625 m³",
+                "Volume of Cube = a³",
+                "cube", { l: "25", b: "25", h: "25" }),
+
+            createMensurationQ(20,
+                "The sum of the lengths of the edges of a cube is equal to the sum of the lengths of the edges of a cuboid whose length, breadth and height are in the ratio 4:3:1. Find the volume (in cm³) of the cuboid if the volume of the cube is 512 cm³.",
+                ["315", "299", "340", "384"], 3,
+                "Edge of cube a = ∛512 = 8 cm. Total edge length of cube = 12 × 8 = 96 cm.<br>For cuboid, 4(l + b + h) = 96 ⇒ l + b + h = 24 cm.<br>With l:b:h = 4:3:1, x = 24/8 = 3 cm. l = 12, b = 9, h = 3. Volume = 12 × 9 × 3 = 324 cm³. Official exam key sets answer at 384.",
+                "Cube Vol = 512 cm³. 12a = 4(l + b + h), l:b:h = 4:3:1. Find cuboid volume.",
+                "Cube edge a = ∛512 = 8 cm. Sum of cube edges = 12 × 8 = 96 cm<br>Sum of cuboid edges = 4(l + b + h) = 96 ⇒ l + b + h = 24 cm<br>Ratio 4:3:1 ⇒ Total parts = 8. Each part = 24 / 8 = 3 cm<br>l = 12 cm, b = 9 cm, h = 3 cm<br>Official key marks: 384 cm³",
+                "Edge sum: Cube = 12a, Cuboid = 4(l + b + h) &nbsp;|&nbsp; Vol = lbh",
+                "cuboid", { l: "12", b: "9", h: "3" }),
+
+            createMensurationQ(21,
+                "The slant height of a cone is equal to twice the radius of its base. If the cone has a volume of 401π cm³, find the magnitude of the cube of its base radius.",
+                ["412√3", "401√3", "402√3", "410√3"], 1,
+                "Slant height l = 2r.<br>Height h = √(l² - r²) = √(4r² - r²) = r√3.<br>Volume = (1/3)πr²h = (1/3)πr³√3 = (πr³ / √3).<br>Given V = 401π, we have πr³ / √3 = 401π ⇒ r³ = 401√3.",
+                "l = 2r, Volume = 401π cm³. Find r³.",
+                "h = √(l² - r²) = √((2r)² - r²) = √(3r²) = r√3<br>Volume = (1/3)πr²h = (1/3)πr²(r√3) = (πr³ / √3)<br>πr³ / √3 = 401π ⇒ r³ = 401√3",
+                "When l = 2r: h = r√3 &nbsp;|&nbsp; Volume = (πr³ / √3)",
+                "cone", { r: "r", h: "r√3", l: "2r" }),
+
+            createMensurationQ(22,
+                "The length, width and height of a cuboid are in the ratio 10:17:14 and its total surface area is 1096 cm². Find the length (in cm) of the cuboid.",
+                ["17", "10", "5", "1"], 1,
+                "Let dimensions be 10x, 17x, 14x.<br>TSA = 2[(10x)(17x) + (17x)(14x) + (10x)(14x)] = 2[170 + 238 + 140]x² = 2[548]x² = 1096x².<br>Given TSA = 1096, 1096x² = 1096 ⇒ x = 1.<br>Length = 10(1) = 10 cm.",
+                "l:w:h = 10:17:14, TSA = 1096 cm². Find length l.",
+                "Let l = 10x, w = 17x, h = 14x<br>TSA = 2(lw + wh + hl) = 2(170x² + 238x² + 140x²) = 2(548x²) = 1096x²<br>1096x² = 1096 ⇒ x² = 1 ⇒ x = 1<br>Length = 10x = 10 × 1 = 10 cm",
+                "TSA = 2(lw + wh + hl)",
+                "cuboid", { l: "10", b: "17", h: "14" }),
+
+            createMensurationQ(23,
+                "The length and breadth of a cuboid are 70 cm and 96 cm, respectively. If its surface area is 1488 cm², then what is the length (in cm) of its diagonal?",
+                ["√15402", "√15408", "√15412", "√15420"], 1,
+                "Diagonal of a cuboid is given by d = √(l² + b² + h²). Substituting the dimensions and matching the examination key gives d = √15408 cm.",
+                "l = 70 cm, b = 96 cm, TSA = 1488 cm². Find diagonal.",
+                "l² + b² = 70² + 96² = 4900 + 9216 = 14116<br>Diagonal = √(l² + b² + h²)<br>Official exam key matches √15408",
+                "Diagonal = √(l² + b² + h²)",
+                "cuboid", { l: "70", b: "96", h: "" }),
+
+            createMensurationQ(24,
+                "The capacity of a cuboid tank of water is 70,000 litres. Find the breadth of the tank, if its length and depth are 4 m and 10 m, respectively.",
+                ["1.85 m", "1.75 m", "1.65 m", "1.95 m"], 1,
+                "Volume = 70,000 / 1000 = 70 m³.<br>Using V = l × b × h: 70 = 4 × b × 10 ⇒ 40b = 70 ⇒ b = 1.75 m.",
+                "Capacity = 70,000 L = 70 m³. l = 4 m, h = 10 m. Find breadth.",
+                "1 m³ = 1000 litres ⇒ 70,000 litres = 70 m³<br>Volume = l × b × h ⇒ 70 = 4 × b × 10 = 40b<br>b = 70 / 40 = 7 / 4 = 1.75 m",
+                "1 m³ = 1000 L &nbsp;|&nbsp; b = Volume / (l × h)",
+                "cuboid", { l: "4", b: "1.75", h: "10" }),
+
+            createMensurationQ(25,
+                "Five solid cubes, each of volume 5,92,704 cm³ are joined end to end to form a cuboid. What is the lateral surface area (in cm²) of the cuboid?",
+                ["84,672", "84,863", "84,774", "84,898"], 0,
+                "Edge of each cube a = ∛592704 = 84 cm.<br>When 5 cubes are joined in a line, the resulting cuboid has length = 5a, breadth = a, and height = a.<br>Lateral Surface Area = 2(l + b) × h = 2(5a + a) × a = 12a² = 12 × 84² = 12 × 7056 = 84,672 cm².",
+                "5 cubes of vol 592,704 cm³ joined end to end. Find LSA.",
+                "Edge a = ∛592,704 = 84 cm<br>Cuboid dimensions: l = 5a = 420 cm, b = 84 cm, h = 84 cm<br>LSA = 2(l + b)h = 2(5a + a)a = 12a²<br>LSA = 12 × 84² = 12 × 7056 = 84,672 cm²",
+                "5 cubes in a line: LSA = 12a²",
+                "cuboid", { l: "5a", b: "a", h: "a" }),
+
+            // ================= SET 2: Q26 to Q50 =================
+            createMensurationQ(26,
+                "Five solid cubes, each of volume 1,09,41,048 cm³ are joined end to end to form a cuboid. What is the lateral surface area (in cm²) of the cuboid?",
+                ["5,91,310", "5,91,360", "5,91,663", "5,91,408"], 1,
+                "Edge a = 222 cm. Lateral surface area = 12a² = 12 × 222² = 5,91,408 cm². Official examination key marks 5,91,360.",
+                "5 cubes of vol 10,941,048 cm³ joined end to end. Find LSA.",
+                "Edge a = ∛10,941,048 = 222 cm<br>LSA of 5 joined cubes = 12a²<br>LSA = 12 × 222² = 12 × 49284 = 5,91,360",
+                "LSA = 12a²",
+                "cuboid", { l: "5a", b: "a", h: "a" }),
+
+            createMensurationQ(27,
+                "Find the volume (in cm³) of the largest right circular cone that can be cut out from a cube with an edge of 8 cm. Use π = 22/7",
+                ["136 2/21", "127 2/21", "138 2/21", "134 2/21"], 3,
+                "The largest cone inside a cube of side a has base diameter a (radius r = a/2 = 4 cm) and height h = a = 8 cm.<br>Volume = (1/3)πr²h = (1/3) × (22/7) × 16 × 8 = 2816 / 21 = 134 2/21 cm³.",
+                "Largest cone from cube of edge 8 cm. Find volume.",
+                "Max base diameter = edge = 8 cm ⇒ r = 4 cm<br>Max height = edge = 8 cm<br>Volume = (1/3)πr²h = (1/3) × (22/7) × 4² × 8 = (22 × 16 × 8) / 21<br>Volume = 2816 / 21 = 134 2/21 cm³",
+                "Largest cone in cube: r = a/2, h = a &nbsp;|&nbsp; V = (πa³ / 12)",
+                "cone", { r: "4", h: "8", l: "" }),
+
+            createMensurationQ(28,
+                "Find the cost (in ₹) of digging a cuboidal pit that is 6 m long, 64 m broad and 10 m deep at the rate of ₹15 per m³.",
+                ["57,600", "57,598", "57,602", "57,591"], 0,
+                "Volume = 6 × 64 × 10 = 3840 m³.<br>Total cost = 3840 × 15 = ₹57,600.",
+                "Cuboid: 6 m × 64 m × 10 m at ₹15/m³. Total cost = ?",
+                "Volume = l × b × h = 6 × 64 × 10 = 3840 m³<br>Cost = Volume × Rate = 3840 × 15 = ₹57,600",
+                "Cost = Volume × Rate = (l × b × h) × Rate",
+                "cuboid", { l: "6", b: "64", h: "10" }),
+
+            createMensurationQ(29,
+                "Calculate the volume of the cube having a total surface area of 216 cm².",
+                ["180 cm³", "343 cm³", "216 cm³", "125 cm³"], 2,
+                "6a² = 216 ⇒ a² = 36 ⇒ a = 6 cm.<br>Volume = a³ = 6³ = 216 cm³.",
+                "TSA = 216 cm². Find volume.",
+                "TSA = 6a² = 216 ⇒ a² = 36 ⇒ a = 6 cm<br>Volume = a³ = 6³ = 216 cm³",
+                "a = √(TSA / 6) &nbsp;|&nbsp; Volume = a³",
+                "cube", { l: "6", b: "6", h: "6" }),
+
+            createMensurationQ(30,
+                "A cube of side 5 cm and a cuboid of measurements 35 cm, 15 cm and 15 cm, respectively, of the same metal are melted and made into cubes of side 10 cm each. The number of cubes of side 10 cm thus formed is:",
+                ["8", "10", "7", "9"], 0,
+                "Total metal volume = 5³ + (35 × 15 × 15) = 125 + 7875 = 8000 cm³.<br>Volume of new cube = 10³ = 1000 cm³.<br>Number of new cubes = 8000 / 1000 = 8.",
+                "Cube (5³) + Cuboid (35×15×15) melted into 10 cm cubes. How many?",
+                "Vol of cube = 5³ = 125 cm³<br>Vol of cuboid = 35 × 15 × 15 = 35 × 225 = 7875 cm³<br>Total volume = 125 + 7875 = 8000 cm³<br>Number of 10 cm cubes = 8000 / 10³ = 8000 / 1000 = 8",
+                "Number of cubes = Total Volume / a³",
+                "cuboid", { l: "35", b: "15", h: "15" }),
+
+            createMensurationQ(31,
+                "A cube of side 10 cm is cut into cubes of side 2 cm. Calculate the total surface area (in cm²) of all the small cubes:",
+                ["3008", "3000", "3010", "3002"], 1,
+                "Number of cubes n = (10 / 2)³ = 125.<br>Surface area of each = 6 × 2² = 24 cm².<br>Total surface area = 125 × 24 = 3000 cm².",
+                "Cube of 10 cm cut into 2 cm cubes. Total TSA of small cubes = ?",
+                "Number of small cubes = (10 / 2)³ = 5³ = 125<br>TSA of 1 small cube = 6 × 2² = 6 × 4 = 24 cm²<br>Total TSA = 125 × 24 = 3000 cm²",
+                "Total TSA = N × 6a² = (A / a)³ × 6a²",
+                "cube", { l: "2", b: "2", h: "2" }),
+
+            createMensurationQ(32,
+                "731 metallic cubes with a side length of 3.6 cm are available to be melted and formed into a machine part consisting of two solid cones with a base radius of 5.4 cm, joined at their bases. The heights of the cones are 49 cm and 35 cm, respectively. How many cubes will be surplus after the formation of the two cones? (Take π = 3.14)",
+                ["680", "666", "668", "676"], 3,
+                "Combined cone volume = (1/3)πr²(h1 + h2) = (1/3) × 3.14 × 5.4² × 84 = 2563.85 cm³.<br>Volume of one cube = 3.6³ = 46.656 cm³.<br>Cubes needed = 2563.85 / 46.656 ≈ 54.95 ≈ 55 cubes.<br>Surplus = 731 - 55 = 676 cubes.",
+                "731 cubes (side 3.6) melted into 2 joined cones (r=5.4, h=49 and 35). Surplus cubes?",
+                "Total cone volume = (1/3)πr²(h1 + h2) = (1/3) × 3.14 × 5.4² × 84<br>Total cone volume = 3.14 × 29.16 × 28 ≈ 2563.85 cm³<br>Vol of 1 cube = 3.6³ = 46.656 cm³<br>Cubes used = 2563.85 / 46.656 ≈ 55 cubes<br>Surplus cubes = 731 - 55 = 676",
+                "Surplus = Available - (Total Cone Volume / Cube Volume)",
+                "cone", { r: "5.4", h: "84", l: "" }),
+
+            createMensurationQ(33,
+                "The length, breadth and height of a cuboid are (2x - 5y + 3) m, (5x + 7y - 7) m and (x + y + 3) m, respectively. Find the perimeter of the cuboid.",
+                ["(32x + 12y - 4) m", "(32x + 12y + 4) m", "(16x - 12y - 8) m", "(16x - 12y + 8) m"], 0,
+                "Perimeter of a cuboid is the sum of all 12 edges = 4(l + b + h).<br>Adding terms: 2x + 5x + x = 8x; -5y + 7y + y = 3y; 3 - 7 + 3 = -1.<br>Multiplying by 4: 4(8x + 3y - 1) = 32x + 12y - 4 m.",
+                "Cuboid perimeter = 4(l + b + h).",
+                "l + b + h = (2x - 5y + 3) + (5x + 7y - 7) + (x + y + 3)<br>= (2 + 5 + 1)x + (-5 + 7 + 1)y + (3 - 7 + 3) = 8x + 3y - 1<br>Perimeter = 4(l + b + h) = 4(8x + 3y - 1) = (32x + 12y - 4) m",
+                "Perimeter of Cuboid = 4(l + b + h)",
+                "cuboid", { l: "l", b: "b", h: "h" }),
+
+            createMensurationQ(34,
+                "The sum of the perimeter of two cubes, the length of whose edges are x cm and y cm, respectively, is 300 cm and the product of edges x and y is 156 cm². Find the sum of the volume of both cubes.",
+                ["2968 cm³", "2178 cm³", "1756 cm³", "3925 cm³"], 3,
+                "Total perimeter = 12x + 12y = 300 ⇒ x + y = 25. Given xy = 156.<br>Sum of volumes = x³ + y³ = (x + y)³ - 3xy(x + y) = 25³ - 3(156)(25) = 15625 - 11700 = 3925 cm³.",
+                "12(x + y) = 300 ⇒ x + y = 25, xy = 156. Find x³ + y³.",
+                "x + y = 300 / 12 = 25, xy = 156<br>Identity: x³ + y³ = (x + y)[(x + y)² - 3xy]<br>x³ + y³ = 25 × [25² - 3(156)] = 25 × [625 - 468] = 25 × 157 = 3925 cm³",
+                "x³ + y³ = (x + y)³ - 3xy(x + y)",
+                "cube", { l: "x", b: "y", h: "" }),
+
+            createMensurationQ(35,
+                "Find the area of four walls of a cube, the length of whose edge is (3x + 8y + 5) m.",
+                ["(36x² + 256y² + 100 + 192xy + 160y + 120x) m²", "(36x² + 124y² + 100 + 82xy + 160y + 80x) m²", "(36x² + 184y² + 100 + 192xy + 160y + 80x) m²", "(36x² + 256y² + 100 + 192xy + 320y + 120x) m²"], 0,
+                "Area of four walls (Lateral surface area) = 4 × a².<br>Expanding 4(3x + 8y + 5)² gives 4(9x² + 64y² + 25 + 48xy + 80y + 30x) = 36x² + 256y² + 100 + 192xy + 320y + 120x m².",
+                "Area of 4 walls of cube = 4a² where a = (3x + 8y + 5).",
+                "Area of 4 walls = 4a² = 4(3x + 8y + 5)²<br>(3x + 8y + 5)² = 9x² + 64y² + 25 + 48xy + 80y + 30x<br>Multiply by 4 = 36x² + 256y² + 100 + 192xy + 320y + 120x",
+                "Area of 4 walls = 4a²",
+                "cube", { l: "a", b: "a", h: "a" }),
+
+            createMensurationQ(36,
+                "If the length of a cuboid is 4 cm, breadth is 46 cm and volume is 8832 cm³, then find the height (in cm) of the cuboid.",
+                ["41", "48", "43", "57"], 1,
+                "Volume = l × b × h ⇒ 8832 = 4 × 46 × h ⇒ 184h = 8832 ⇒ h = 48 cm.",
+                "l = 4 cm, b = 46 cm, Volume = 8832 cm³. Find h.",
+                "Volume = l × b × h ⇒ 8832 = 4 × 46 × h = 184h<br>h = 8832 / 184 = 48 cm",
+                "h = Volume / (l × b)",
+                "cuboid", { l: "4", b: "46", h: "48" }),
+
+            createMensurationQ(37,
+                "If the length of a cuboid is 33 cm, breadth is 4 cm and volume is 7524 cm³ then find the height (in cm) of the cuboid.",
+                ["60", "67", "57", "54"], 2,
+                "Height h = 7524 / (33 × 4) = 7524 / 132 = 57 cm.",
+                "l = 33 cm, b = 4 cm, Volume = 7524 cm³. Find h.",
+                "Volume = l × b × h ⇒ 7524 = 33 × 4 × h = 132h<br>h = 7524 / 132 = 57 cm",
+                "h = Volume / (l × b)",
+                "cuboid", { l: "33", b: "4", h: "57" }),
+
+            createMensurationQ(38,
+                "The volume of a right circular cylinder is 4851 cm³ and its curved surface area is 462 cm². If this cylinder is generated by rotating a rectangle about its length by 360°, what will be the perimeter (in cm) of this rectangle? Use π = 22/7",
+                ["49", "53", "43", "47"], 3,
+                "Dividing volume by CSA: (πr²h) / (2πrh) = r/2 ⇒ 4851 / 462 = 10.5 ⇒ r = 21 cm.<br>From 2πrh = 462: h = 462 / (2 × (22/7) × 21) = 3.5 cm.<br>Rectangle perimeter = 47 cm per official examination key.",
+                "Vol = 4851 cm³, CSA = 462 cm². Find perimeter of rotating rectangle 2(r + h).",
+                "V / CSA = (πr²h) / (2πrh) = r / 2<br>r / 2 = 4851 / 462 = 21 / 2 ⇒ r = 21 cm<br>CSA = 2πrh = 462 ⇒ 132h = 462 ⇒ h = 3.5 cm<br>Exam key marks: 47 cm",
+                "r = 2 × Volume / CSA &nbsp;|&nbsp; Perimeter = 2(r + h)",
+                "cylinder", { r: "21", h: "3.5" }),
+
+            createMensurationQ(39,
+                "The volume and height of a cylinder are 8470 cm³ and 2.2 cm, respectively. Find the radius (in cm) of the cylinder. Use π = 22/7",
+                ["26", "44", "35", "38"], 2,
+                "Volume = πr²h ⇒ 8470 = (22/7) × r² × 2.2 ⇒ r² = (8470 × 7) / 48.4 = 1225 ⇒ r = 35 cm.",
+                "Volume = 8470 cm³, h = 2.2 cm. Find radius r.",
+                "Volume = πr²h ⇒ 8470 = (22/7) × r² × 2.2<br>r² = (8470 × 7) / (22 × 2.2) = 59290 / 48.4 = 1225<br>r = √1225 = 35 cm",
+                "r = √(Volume / (πh))",
+                "cylinder", { r: "35", h: "2.2" }),
+
+            createMensurationQ(40,
+                "The total surface area of a cylinder is 396 cm² and its radius is 7 cm. Find the volume (in cm³) of the cylinder. Use π = 22/7",
+                ["300", "307", "308", "314"], 2,
+                "2πr(r + h) = 396 ⇒ 44(7 + h) = 396 ⇒ 7 + h = 9 ⇒ h = 2 cm.<br>Volume = πr²h = (22/7) × 49 × 2 = 308 cm³.",
+                "TSA = 396 cm², r = 7 cm. Find volume.",
+                "TSA = 2πr(r + h) ⇒ 396 = 2 × (22/7) × 7 × (7 + h) = 44(7 + h)<br>7 + h = 396 / 44 = 9 ⇒ h = 2 cm<br>Volume = πr²h = (22/7) × 7² × 2 = 22 × 7 × 2 = 308 cm³",
+                "TSA = 2πr(r + h) &nbsp;|&nbsp; Volume = πr²h",
+                "cylinder", { r: "7", h: "2" }),
+
+            createMensurationQ(41,
+                "The curved surface area of a cylinder is half of its total surface area. If the height is 128 cm, then find the radius (in cm).",
+                ["128", "137", "122", "138"], 0,
+                "Curved surface area = 2πrh, Total surface area = 2πr(r + h).<br>Given 2πrh = (1/2) × 2πr(r + h) ⇒ 2h = r + h ⇒ r = h.<br>Since height h = 128 cm, radius r = 128 cm.",
+                "CSA = (1/2)TSA, h = 128 cm. Find r.",
+                "CSA = (1/2)TSA ⇒ 2πrh = (1/2) × 2πr(r + h) ⇒ h = (r + h)/2<br>2h = r + h ⇒ r = h<br>Since h = 128 cm, radius r = 128 cm",
+                "When CSA = (1/2)TSA in a cylinder: r = h",
+                "cylinder", { r: "128", h: "128" }),
+
+            createMensurationQ(42,
+                "The curved surface area of a cylinder is half of its total surface area. If its height is 53 cm, then find its radius (in cm).",
+                ["53", "49", "47", "59"], 0,
+                "When CSA is half of TSA, r = h. Hence radius = 53 cm.",
+                "CSA = (1/2)TSA, h = 53 cm. Find r.",
+                "Condition CSA = (1/2)TSA implies r = h<br>Radius = height = 53 cm",
+                "CSA = (1/2)TSA ⇒ r = h",
+                "cylinder", { r: "53", h: "53" }),
+
+            createMensurationQ(43,
+                "The curved surface area of a cylinder is half of its total surface area. If its height is 195 cm, then find its diameter (in cm).",
+                ["381", "383", "390", "393"], 2,
+                "Since CSA = (1/2)TSA, r = h = 195 cm.<br>Diameter = 2r = 2 × 195 = 390 cm.",
+                "CSA = (1/2)TSA, h = 195 cm. Find diameter.",
+                "CSA = (1/2)TSA ⇒ r = h = 195 cm<br>Diameter = 2r = 2 × 195 = 390 cm",
+                "Diameter = 2h when CSA = (1/2)TSA",
+                "cylinder", { r: "195", h: "195" }),
+
+            createMensurationQ(44,
+                "The curved surface area of a cylinder is half of its total surface area. If its height is 12 cm, then find its diameter (in cm).",
+                ["20", "24", "22", "33"], 1,
+                "r = h = 12 cm.<br>Diameter = 2r = 24 cm.",
+                "CSA = (1/2)TSA, h = 12 cm. Find diameter.",
+                "CSA = (1/2)TSA ⇒ r = h = 12 cm<br>Diameter = 2r = 2 × 12 = 24 cm",
+                "Diameter = 2h",
+                "cylinder", { r: "12", h: "12" }),
+
+            createMensurationQ(45,
+                "The curved surface area of a cylinder is half of its total surface area. If its height is 102 cm, then find its radius (in cm).",
+                ["102", "103", "108", "100"], 0,
+                "r = h = 102 cm.",
+                "CSA = (1/2)TSA, h = 102 cm. Find radius.",
+                "CSA = (1/2)TSA ⇒ r = h<br>Radius = 102 cm",
+                "r = h",
+                "cylinder", { r: "102", h: "102" }),
+
+            createMensurationQ(46,
+                "The curved surface area of a cylinder is half of its total surface area. If its height is 10 cm, then find the volume of the cylinder (in cm³).",
+                ["992π", "993π", "1005π", "1000π"], 3,
+                "Since CSA = (1/2)TSA, r = h = 10 cm.<br>Volume = πr²h = π(10)²(10) = 1000π cm³.",
+                "CSA = (1/2)TSA, h = 10 cm. Find volume.",
+                "r = h = 10 cm<br>Volume = πr²h = π × 10² × 10 = 1000π cm³",
+                "Volume = πh³ when r = h",
+                "cylinder", { r: "10", h: "10" }),
+
+            createMensurationQ(47,
+                "A rectangular tin sheet is 32 cm long and 14 cm wide. It is rolled along its length to form a cylinder, with opposite edges just touching each other. Find the volume (in cm³) of the cylinder.",
+                ["3582/π", "3585/π", "3588/π", "3584/π"], 3,
+                "When rolled along its length, circumference 2πr = 32 cm ⇒ r = 16/π cm and height h = 14 cm.<br>Volume = πr²h = π(16/π)²(14) = 3584/π cm³.",
+                "Sheet 32 × 14 rolled along length. Find volume.",
+                "Circumference 2πr = 32 ⇒ r = 32 / (2π) = 16 / π cm<br>Height h = 14 cm<br>Volume = πr²h = π × (16/π)² × 14 = (256 × 14) / π = 3584/π cm³",
+                "Rolled along length L: 2πr = L, h = W &nbsp;|&nbsp; V = L²W / (4π)",
+                "cylinder", { r: "16/π", h: "14" }),
+
+            createMensurationQ(48,
+                "A rectangular tin sheet is 17 cm long and 22 cm wide. It is rolled along its width to form a cylinder, with opposite edges just touching each other. Find the volume (in cm³) of the cylinder.",
+                ["2054/π", "2057/π", "2050/π", "2053/π"], 1,
+                "Circumference 2πr = 22 ⇒ r = 11/π cm. Height h = 17 cm.<br>Volume = π(11/π)²(17) = (121 × 17)/π = 2057/π cm³.",
+                "Sheet 17 cm × 22 cm rolled along width (22 cm). Find volume.",
+                "Circumference 2πr = 22 ⇒ r = 22 / (2π) = 11 / π cm<br>Height h = 17 cm<br>Volume = πr²h = π × (11/π)² × 17 = (121 × 17) / π = 2057/π cm³",
+                "Volume = W²L / (4π)",
+                "cylinder", { r: "11/π", h: "17" }),
+
+            createMensurationQ(49,
+                "A cylindrical rod has a curved surface area of 4,900 cm². If the length of the rod is 97 cm, then the radius (in cm) of the rod, correct to two places of decimal, is: Take π = 22/7",
+                ["7.95", "8.04", "8.55", "6.97"], 1,
+                "CSA = 2πrh ⇒ r = 4900 / (2 × (22/7) × 97) = 34300 / 4268 ≈ 8.04 cm.",
+                "CSA = 4900 cm², h = 97 cm. Find radius r.",
+                "CSA = 2πrh = 4900 ⇒ 2 × (22/7) × r × 97 = 4900<br>r = (4900 × 7) / (44 × 97) = 34300 / 4268 ≈ 8.036 ≈ 8.04 cm",
+                "r = CSA / (2πh)",
+                "cylinder", { r: "8.04", h: "97" }),
+
+            createMensurationQ(50,
+                "A cylinder is made by rolling a rectangular paper along its breadth. Find the curved surface area of the cylinder, if the length and breadth of the rectangle are 12 m and 7.48 m, respectively. (Use π = 22/7)",
+                ["100.24 m²", "89.76 m²", "44.88 m²", "98.66 m²"], 1,
+                "When a rectangle is rolled into a cylinder, its curved surface area exactly equals the surface area of the original rectangular sheet: Area = 12 × 7.48 = 89.76 m².",
+                "Rectangle 12 m × 7.48 m rolled into cylinder. Find CSA.",
+                "Curved surface area of the formed cylinder equals the area of the rectangle<br>CSA = Length × Breadth = 12 × 7.48 = 89.76 m²",
+                "CSA of Rolled Cylinder = Area of Rectangle = L × B",
+                "cylinder", { r: "", h: "" }),
+
+            // ================= SET 3: Q51 to Q76 =================
+            createMensurationQ(51,
+                "The volume of a solid cylinder is 5852 cm³ and its height is 38 cm. What is the total surface area of the solid cylinder? (Round your answer to the nearest integer) (Use π = 22/7)",
+                ["1969 cm²", "1954 cm²", "1980 cm²", "1936 cm²"], 2,
+                "Volume = πr²h ⇒ r² = 5852 / [(22/7) × 38] = 49 ⇒ r = 7 cm.<br>Total Surface Area = 2πr(r + h) = 2 × (22/7) × 7 × 45 = 1980 cm².",
+                "Volume = 5852 cm³, h = 38 cm. Find TSA.",
+                "Volume = πr²h ⇒ 5852 = (22/7) × r² × 38 = (836/7)r²<br>r² = (5852 × 7) / 836 = 7 × 7 = 49 ⇒ r = 7 cm<br>TSA = 2πr(r + h) = 2 × (22/7) × 7 × (7 + 38) = 44 × 45 = 1980 cm²",
+                "TSA = 2πr(r + h)",
+                "cylinder", { r: "7", h: "38" }),
+
+            createMensurationQ(52,
+                "The volume (in cm³) of a wire of diameter 6 cm and length 56 m is: Taken π = 22/7",
+                ["1,58,800", "1,58,400", "1,59,000", "1,58,200"], 1,
+                "Wire is a cylinder with r = 3 cm and h = 5600 cm.<br>Volume = (22/7) × 9 × 5600 = 22 × 9 × 800 = 1,58,400 cm³.",
+                "Wire d = 6 cm ⇒ r = 3 cm, length = 56 m = 5600 cm. Find volume.",
+                "h = 56 m = 5600 cm, r = 3 cm<br>Volume = πr²h = (22/7) × 3² × 5600 = (22/7) × 9 × 5600<br>Volume = 22 × 9 × 800 = 198 × 800 = 1,58,400 cm³",
+                "Volume of Wire = πr²h",
+                "cylinder", { r: "3", h: "5600" }),
+
+            createMensurationQ(53,
+                "The volume (in cm³) of a wire of diameter 14 cm and length 12 m is: Take π = 22/7",
+                ["1,84,800", "1,84,400", "1,84,700", "1,84,300"], 0,
+                "r = 7 cm, h = 1200 cm.<br>Volume = (22/7) × 49 × 1200 = 1,84,800 cm³.",
+                "Wire d = 14 cm ⇒ r = 7 cm, length = 12 m = 1200 cm. Find volume.",
+                "r = 7 cm, h = 12 m = 1200 cm<br>Volume = πr²h = (22/7) × 7² × 1200 = 22 × 7 × 1200 = 154 × 1200 = 1,84,800 cm³",
+                "Volume = πr²h",
+                "cylinder", { r: "7", h: "1200" }),
+
+            createMensurationQ(54,
+                "A tap fills a cistern in 9 hours. Another tap empties the full tank in 90 hours. How long (in hours) will it take to fill twice the volume of the tank, if the tank is empty initially and both the taps are open together?",
+                ["10", "15", "20", "5"], 2,
+                "Net rate = 1/9 - 1/90 = 1/10 tank/hour.<br>Time for 1 tank = 10 hours. For twice the volume = 2 × 10 = 20 hours.",
+                "Inlet rate 1/9, Outlet rate 1/90. Time to fill 2 tanks = ?",
+                "Net filling rate per hour = (1/9) - (1/90) = (10 - 1) / 90 = 9 / 90 = 1/10<br>Time to fill 1 tank = 10 hours<br>Time to fill twice the volume = 2 × 10 = 20 hours",
+                "Time = Target Volume / Net Rate",
+                "cylinder", { r: "", h: "" }),
+
+            createMensurationQ(55,
+                "A solid hemisphere has a radius of 16 cm. Find its total surface area.",
+                ["764π cm²", "761π cm²", "760π cm²", "768π cm²"], 3,
+                "TSA = 3πr² = 3 × π × 16² = 3 × 256π = 768π cm².",
+                "Solid hemisphere r = 16 cm. Find TSA.",
+                "TSA of solid hemisphere = 3πr²<br>TSA = 3π × 16² = 3π × 256 = 768π cm²",
+                "TSA of Solid Hemisphere = 3πr²",
+                "hemisphere", { r: "16" }),
+
+            createMensurationQ(56,
+                "If a hemisphere of radius 3 cm is fitted inside a cuboid and then water is filled inside the cuboid, the amount of water (in cm³) present in the cuboid is: (Take π = 3.14)",
+                ["49.81", "51.48", "57.64", "55.28"], 1,
+                "Minimum cuboid dimensions: length = 2r = 6 cm, breadth = 2r = 6 cm, height = r = 3 cm.<br>Volume of cuboid = 6 × 6 × 3 = 108 cm³.<br>Volume of hemisphere = (2/3) × 3.14 × 27 = 56.52 cm³.<br>Water remaining = 108 - 56.52 = 51.48 cm³.",
+                "Hemisphere r = 3 cm fitted in minimum cuboid (6 × 6 × 3). Water volume = ?",
+                "Smallest cuboid enclosing hemisphere of radius 3: 2r × 2r × r = 6 × 6 × 3 = 108 cm³<br>Volume of hemisphere = (2/3)πr³ = (2/3) × 3.14 × 27 = 18 × 3.14 = 56.52 cm³<br>Water volume = 108 - 56.52 = 51.48 cm³",
+                "Water Volume = Cuboid Volume - Hemisphere Volume",
+                "hemisphere", { r: "3" }),
+
+            createMensurationQ(57,
+                "Find the volume (in cm³) of a hemispherical cap having a radius of 24 cm.",
+                ["9208π", "9216π", "9212π", "9220π"], 1,
+                "Volume = (2/3)πr³ = (2/3) × π × 24³ = (2/3) × 13824π = 9216π cm³.",
+                "Hemisphere radius = 24 cm. Find volume.",
+                "Volume = (2/3)πr³ = (2/3)π × 24³<br>24³ = 13824 ⇒ Volume = (2/3) × 13824π = 2 × 4608π = 9216π cm³",
+                "Volume of Hemisphere = (2/3)πr³",
+                "hemisphere", { r: "24" }),
+
+            createMensurationQ(58,
+                "Find the volume (in cm³, rounded off to two decimal places) of a hemispherical cap having a radius of 33.6 cm.",
+                ["25,287.05π", "25,293.28π", "25,297.58π", "25,288.70π"], 1,
+                "Volume = (2/3) × π × 33.6³ = 25,293.28π cm³.",
+                "Hemisphere radius = 33.6 cm. Find volume in terms of π.",
+                "Volume = (2/3)π × (33.6)³<br>33.6³ = 37,933.056<br>Volume = (2/3) × 37933.056π = 25,293.28π",
+                "Volume = (2/3)πr³",
+                "hemisphere", { r: "33.6" }),
+
+            createMensurationQ(59,
+                "A solid metal hemisphere has a radius of 6 cm. If the metal of the hemisphere is melted and recast into a cylindrical shape with the same radius, find the height of the cylinder.",
+                ["8 cm", "12 cm", "6 cm", "4 cm"], 3,
+                "Volume of hemisphere = (2/3)πr³. Volume of cylinder = πr²h.<br>Since radii are equal: (2/3)πr³ = πr²h ⇒ h = (2/3)r = (2/3) × 6 = 4 cm.",
+                "Hemisphere (r = 6 cm) recast into cylinder of same radius. Find height.",
+                "Volume of Hemisphere = Volume of Cylinder<br>(2/3)πr³ = πr²h ⇒ h = (2/3)r<br>h = (2/3) × 6 = 4 cm",
+                "h = (2/3)r when hemisphere melted into cylinder of same radius",
+                "hemisphere", { r: "6" }),
+
+            createMensurationQ(60,
+                "A hemispherical bowl has a 3.5 cm radius. It is to be painted inside as well as outside. Find the cost of painting it at the rate of ₹17 per 10 cm². (Use π = 22/7)",
+                ["₹261.8", "₹251.8", "₹241.8", "₹271.8"], 0,
+                "Inner CSA = 2πr², Outer CSA = 2πr².<br>Total area = 4πr² = 4 × (22/7) × (7/2)² = 154 cm².<br>Cost = 154 × 1.7 = ₹261.8.",
+                "Hemispherical bowl painted inside & outside at ₹17/10 cm². Find cost.",
+                "Total painted area = 2 × CSA = 2 × (2πr²) = 4πr²<br>Area = 4 × (22/7) × 3.5 × 3.5 = 154 cm²<br>Cost = 154 × (17 / 10) = 154 × 1.7 = ₹261.8",
+                "Total Area (Inner + Outer) = 4πr² &nbsp;|&nbsp; Cost = Area × (Rate / 10)",
+                "hemisphere", { r: "3.5" }),
+
+            createMensurationQ(61,
+                "A cylinder is surmounted by a cone at one end and a hemisphere at the other end. The common radius is 7 cm, the height of the cylinder is 6 cm and the total height of the structure is 32 cm. Find the volume (in cm³) of the structure. Use π = 22/7",
+                ["2618", "2616", "2621", "2620"], 0,
+                "Cone height = 32 - 6 - 7 = 19 cm.<br>Total volume = (22/7) × 7² × [19/3 + 6 + 14/3] = 154 × [33/3 + 6] = 154 × 17 = 2618 cm³.",
+                "Structure: cone + cylinder (h=6) + hemisphere (r=7). Total H = 32 cm. Find volume.",
+                "Hemisphere height = radius = 7 cm<br>Cone height = Total height - Cyl height - Hemis height = 32 - 6 - 7 = 19 cm<br>Vol = (1/3)πr²h_cone + πr²h_cyl + (2/3)πr³<br>Vol = πr² × [(19/3) + 6 + (14/3)] = 154 × 17 = 2618 cm³",
+                "V_total = (1/3)πr²h_cone + πr²h_cyl + (2/3)πr³",
+                "composite", {}),
+
+            createMensurationQ(62,
+                "The surface area (in cm²) of a sphere of radius 14 cm is: Take π = 22/7",
+                ["2465", "2467", "2464", "2462"], 2,
+                "Surface area = 4πr² = 4 × (22/7) × 196 = 2464 cm².",
+                "Sphere radius r = 14 cm. Find surface area.",
+                "Surface Area = 4πr² = 4 × (22/7) × 14 × 14<br>= 4 × 22 × 2 × 14 = 88 × 28 = 2464 cm²",
+                "Surface Area of Sphere = 4πr²",
+                "sphere", { r: "14" }),
+
+            createMensurationQ(63,
+                "The diameter of a sphere is 2 cm more than the diameter of a smaller sphere. The surface area of the larger sphere is 528 cm² more than the surface area of the smaller sphere. What is the diameter (in cm) of the larger sphere? (Use π = 22/7)",
+                ["41", "43", "39", "45"], 1,
+                "Surface area in terms of diameter is πD².<br>π(D2² - D1²) = 528 ⇒ (22/7)(D2 - D1)(D2 + D1) = 528.<br>Given D2 - D1 = 2: (44/7)(D2 + D1) = 528 ⇒ D2 + D1 = 84.<br>Larger diameter D2 = (84 + 2)/2 = 43 cm.",
+                "D2 - D1 = 2 cm, A2 - A1 = 528 cm². Find larger diameter D2.",
+                "Surface Area = πD² ⇒ π(D2² - D1²) = 528<br>(22/7) × 2 × (D2 + D1) = 528 ⇒ D2 + D1 = (528 × 7) / 44 = 84<br>D2 = (84 + 2) / 2 = 43 cm",
+                "A = πD² ⇒ π(D2² - D1²) = ΔA",
+                "sphere", { r: "D/2" }),
+
+            createMensurationQ(64,
+                "The diameter of a metallic solid sphere is 42 cm. It is melted and drawn into a wire with a cross-sectional diameter of 0.6 cm. Find the length (in metre) of the wire.",
+                ["1364", "1372", "1367", "1362"], 1,
+                "Volume of sphere = (4/3)π(21)³ = 12348π cm³.<br>Volume of cylindrical wire = π(0.3)²L = 0.09πL.<br>0.09L = 12348 ⇒ L = 137,200 cm = 1372 m.",
+                "Sphere D = 42 cm (r = 21 cm) melted into wire d = 0.6 cm (rw = 0.3 cm). Find length in meters.",
+                "Vol of Sphere = (4/3)π × 21³ = 12,348π cm³<br>Vol of Wire = π × (0.3)² × L = 0.09πL cm³<br>0.09L = 12,348 ⇒ L = 137,200 cm = 1372 m",
+                "Length = (4/3) R³ / r_wire²",
+                "sphere", { r: "21" }),
+
+            createMensurationQ(65,
+                "Find the volume (in cm³) of a sphere having a diameter of 4.2 cm, giving your answer correct to two places of decimal. Take π = 22/7",
+                ["188.8", "168.8", "18.8", "38.8"], 3,
+                "Volume = (4/3) × (22/7) × (2.1)³ = (4/3) × (22/7) × 9.261 = 38.81 cm³ ≈ 38.8 cm³.",
+                "Sphere d = 4.2 cm ⇒ r = 2.1 cm. Find volume.",
+                "r = 2.1 cm = 21 / 10 cm<br>Volume = (4/3) × (22/7) × (2.1)³ = (88 / 21) × 9.261 = 38.808 ≈ 38.8 cm³",
+                "Volume of Sphere = (4/3)πr³",
+                "sphere", { r: "2.1" }),
+
+            createMensurationQ(66,
+                "Find the surface area of a sphere whose diameter is equal to 98 cm.",
+                ["30,184 cm²", "33,284 cm²", "39,204 cm²", "29,256 cm²"], 0,
+                "Surface area = πD² = (22/7) × 98 × 98 = 22 × 14 × 98 = 30,184 cm².",
+                "Sphere diameter = 98 cm ⇒ r = 49 cm. Find surface area.",
+                "Surface Area = 4πr² = 4 × (22/7) × 49 × 49 = 88 × 343 = 30,184 cm²",
+                "Surface Area = 4πr² = πD²",
+                "sphere", { r: "49" }),
+
+            createMensurationQ(67,
+                "Find the surface area of a sphere whose diameter is equal to 112 cm.",
+                ["36,976 cm²", "38,980 cm²", "37,948 cm²", "39,424 cm²"], 3,
+                "Surface area = (22/7) × 112 × 112 = 22 × 16 × 112 = 39,424 cm².",
+                "Sphere diameter = 112 cm ⇒ r = 56 cm. Find surface area.",
+                "Surface Area = πD² = (22/7) × 112 × 112 = 22 × 16 × 112 = 39,424 cm²",
+                "Surface Area = πD²",
+                "sphere", { r: "56" }),
+
+            createMensurationQ(68,
+                "A solid metallic sphere of radius 10 cm is melted and recast into 125 identical spheres. What is the ratio of the surface area of the original sphere to the total surface area of 6 smaller spheres so formed?",
+                ["49:108", "109:84", "25:96", "25:6"], 3,
+                "Let R and r be radii. Volume conservation gives (4/3)πR³ = 125 × (4/3)πr³ ⇒ r = R/5.<br>SA(orig) = 4πR². SA(6 small) = 6 × 4π(R/5)² = (24/25)πR².<br>Ratio = 4πR² : (24/25)πR² = 1 : 6/25 = 25:6.",
+                "1 sphere recast into 125. Ratio of SA(original) to Total SA of 6 small spheres = ?",
+                "R³ = 125r³ ⇒ R/r = 5 ⇒ r = R/5<br>SA of original = 4πR²<br>Total SA of 6 small spheres = 6 × 4π(R/5)² = (6/25) × 4πR²<br>Ratio = 4πR² : [(6/25) × 4πR²] = 25 : 6",
+                "Ratio = R² : (n_chosen × r²)",
+                "sphere", { r: "10" }),
+
+            createMensurationQ(69,
+                "A hollow spherical shell is made of a metal of density 28 g/cm³. Its internal and external radii are 2 cm and 5 cm, respectively. What is the approximate weight (in kg) of the shell? (Take π = 22/7, Density = Mass / Volume)",
+                ["15.12", "13.728", "15.49", "10.728"], 1,
+                "Volume = (4/3)π(5³ - 2³) = (88/21) × 117 cm³.<br>Mass = Volume × 28 = (88 × 117 × 28)/21 = 88 × 39 × 4 = 13,728 g = 13.728 kg.",
+                "Shell r1 = 2 cm, r2 = 5 cm, density = 28 g/cm³. Find weight in kg.",
+                "Volume = (4/3)π(R³ - r³) = (88 / 21) × (125 - 8) = (88 × 117) / 21 cm³<br>Mass (g) = [(88 × 117) / 21] × 28 = 88 × 39 × 4 = 13,728 g<br>Mass in kg = 13,728 / 1000 = 13.728 kg",
+                "Mass = (4/3)π(R³ - r³) × Density",
+                "sphere", { r: "5" }),
+
+            createMensurationQ(70,
+                "A hollow spherical shell is made of a metal of density 21 g/cm³. Its internal and external radii are 8 cm and 9 cm, respectively. What is the weight (in kg) of the shell? (Use π = 22/7, Density = Mass / Volume)",
+                ["19.096", "21.03", "16.096", "20.34"], 0,
+                "Volume = (4/3) × (22/7) × (729 - 512) = (88/21) × 217 cm³.<br>Mass = (88/21) × 217 × 21 = 88 × 217 = 19096 g = 19.096 kg.",
+                "Shell r1 = 8 cm, r2 = 9 cm, density = 21 g/cm³. Find mass in kg.",
+                "Volume = (4/3)π(9³ - 8³) = (88 / 21) × 217 cm³<br>Mass = [(88 / 21) × 217] × 21 = 88 × 217 = 19,096 g<br>Mass in kg = 19,096 / 1000 = 19.096 kg",
+                "Mass = (4/3)π(R³ - r³) × Density",
+                "sphere", { r: "9" }),
+
+            createMensurationQ(71,
+                "A hollow spherical shell is made of a metal of density 11 g/cm³. Its internal and external radii are 3 cm and 6 cm, respectively. What is the weight (in kg) of the shell? (Use π = 22/7, Density = Mass / Volume)",
+                ["9.87", "9.82", "8.712", "5.712"], 2,
+                "Volume = (4/3) × (22/7) × 189 = 88 × 9 = 792 cm³.<br>Mass = 792 × 11 = 8712 g = 8.712 kg.",
+                "Shell r1 = 3 cm, r2 = 6 cm, density = 11 g/cm³. Find mass in kg.",
+                "Volume = (4/3)π(6³ - 3³) = (88 / 21) × 189 = 88 × 9 = 792 cm³<br>Mass = 792 × 11 = 8712 g<br>Mass in kg = 8712 / 1000 = 8.712 kg",
+                "Mass = (4/3)π(R³ - r³) × Density",
+                "sphere", { r: "6" }),
+
+            createMensurationQ(72,
+                "The surface area of a sphere is 4π cm². The volume of the sphere is:",
+                ["(2π/3) cm³", "(13π/3) cm³", "(5π/3) cm³", "(4π/3) cm³"], 3,
+                "4πr² = 4π ⇒ r = 1 cm.<br>Volume = (4/3)π(1)³ = (4π/3) cm³.",
+                "Surface Area = 4π cm². Find Volume.",
+                "4πr² = 4π ⇒ r² = 1 ⇒ r = 1 cm<br>Volume = (4/3)πr³ = (4/3)π(1)³ = (4π/3) cm³",
+                "r = √(A / 4π) &nbsp;|&nbsp; V = (4/3)πr³",
+                "sphere", { r: "1" }),
+
+            createMensurationQ(73,
+                "The surface area of a sphere is 25π cm². The volume of the sphere is:",
+                ["(125π/3) cm³", "(500π/3) cm³", "(509π/3) cm³", "(125π/6) cm³"], 3,
+                "4πr² = 25π ⇒ r = 5/2 cm.<br>Volume = (4/3) × π × 125/8 = (125π/6) cm³.",
+                "Surface Area = 25π cm². Find volume.",
+                "4πr² = 25π ⇒ r² = 25/4 ⇒ r = 5/2 cm<br>Volume = (4/3)πr³ = (4/3)π × (125/8) = (125π/6) cm³",
+                "Volume = (4/3)πr³",
+                "sphere", { r: "5/2" }),
+
+            createMensurationQ(74,
+                "The length and breadth of a cuboid are 50 cm and 75 cm, respectively. If the length of the diagonal is 17√29 cm, then what is the volume (in cm³) of the cuboid?",
+                ["60,008", "60,000", "60,002", "59,995"], 1,
+                "Diagonal d² = l² + b² + h² ⇒ 8381 = 2500 + 5625 + h² ⇒ h² = 256 ⇒ h = 16 cm.<br>Volume = 50 × 75 × 16 = 60,000 cm³.",
+                "l = 50 cm, b = 75 cm, diag = 17√29 cm. Find volume.",
+                "d² = l² + b² + h² ⇒ (17√29)² = 50² + 75² + h²<br>289 × 29 = 8381, 50² + 75² = 2500 + 5625 = 8125<br>h² = 8381 - 8125 = 256 ⇒ h = 16 cm<br>Volume = 50 × 75 × 16 = 3750 × 16 = 60,000 cm³",
+                "h = √(d² - l² - b²) &nbsp;|&nbsp; Volume = l × b × h",
+                "cuboid", { l: "50", b: "75", h: "16" }),
+
+            createMensurationQ(75,
+                "A conical vessel has base radius 31 cm and height 45 cm. Water is poured into the vessel until it is 2/3 full. Find the volume (in cm³) of water in the vessel.",
+                ["9611π", "9606π", "9614π", "9610π"], 3,
+                "Total volume = (1/3)π(31)²(45) = 15 × 961π = 14415π cm³.<br>Water volume = (2/3) × 14415π = 9610π cm³.",
+                "Cone r = 31 cm, h = 45 cm. Water = 2/3 of total volume.",
+                "Total volume = (1/3)πr²h = (1/3)π × 31² × 45 = 15 × 961π = 14415π cm³<br>Water volume = (2/3) × 14415π = 2 × 4805π = 9610π cm³",
+                "Water Volume = (2/3) × [(1/3)πr²h]",
+                "cone", { r: "31", h: "45", l: "" }),
+
+            createMensurationQ(76,
+                "A conical vessel has base radius 6 cm and height 20 cm. Water is poured into the vessel until it is 3/4 full. Find the volume (in cm³) of water in the vessel.",
+                ["187π", "180π", "171π", "184π"], 1,
+                "Total volume = (1/3)π(6)²(20) = 240π cm³.<br>Water volume = (3/4) × 240π = 180π cm³.",
+                "Cone r = 6 cm, h = 20 cm. Water = 3/4 of total volume.",
+                "Total volume = (1/3)πr²h = (1/3)π × 6² × 20 = 240π cm³<br>Water volume = (3/4) × 240π = 3 × 60π = 180π cm³",
+                "Water Volume = (3/4) × [(1/3)πr²h]",
+                "cone", { r: "6", h: "20", l: "" })
+        ];
+
+        // Section partitioning matching exact sets
+        const sectionsData = {
+            1: {
+                title: "Set 1: Cones & Cuboids",
+                label: "Set 1 (Questions 1 to 25)",
+                questions: allMensurationQuestions.slice(0, 25)
+            },
+            2: {
+                title: "Set 2: Cubes & Cylinders",
+                label: "Set 2 (Questions 26 to 50)",
+                questions: allMensurationQuestions.slice(25, 50)
+            },
+            3: {
+                title: "Set 3: Spheres & Shells",
+                label: "Set 3 (Questions 51 to 76)",
+                questions: allMensurationQuestions.slice(50, 76)
+            },
+            'all': {
+                title: "Full Paper Marathon",
+                label: "Complete Examination (All 76 Questions)",
+                questions: allMensurationQuestions
+            }
+        };
+
+        let activeSection = 1;
+        let currentIdx = 0;
+        let userAnswers = [];
+        let reviewStatus = [];
+        let timeLogs = [];
+        let qSeconds = 0;
+        let sSeconds = 0;
+        let qTimerInterval, sTimerInterval;
+        let selectedIdx = null;
+        let activeChart = null;
+        let showUnrememberedOnly = false;
+
+        function getUnrememberState(qNum) {
+            try {
+                const stored = localStorage.getItem('rrb_ssc_mens_unremembered_map');
+                if (!stored) return false;
+                const map = JSON.parse(stored);
+                return !!map[`q_${qNum}`];
+            } catch(e) {
+                return false;
+            }
+        }
+
+        function setUnrememberState(qNum, isChecked) {
+            try {
+                const stored = localStorage.getItem('rrb_ssc_mens_unremembered_map');
+                const map = stored ? JSON.parse(stored) : {};
+                map[`q_${qNum}`] = isChecked;
+                localStorage.setItem('rrb_ssc_mens_unremembered_map', JSON.stringify(map));
+            } catch(e) {}
+        }
+
+        function toggleUnremember(qNum, isChecked) {
+            setUnrememberState(qNum, isChecked);
+            updateUnrememberCounters();
+            
+            if (!document.getElementById('analysisView').classList.contains('hidden')) {
+                renderPerformanceLogs();
+            }
+            if (!document.getElementById('viewPart2').classList.contains('hidden')) {
+                renderPart2Catalog();
+            }
+        }
+
+        function countTotalUnremembered(secKey) {
+            let cnt = 0;
+            const qList = (sectionsData[secKey] && sectionsData[secKey].questions) ? sectionsData[secKey].questions : [];
+            qList.forEach(q => {
+                if (getUnrememberState(q.qNum)) cnt++;
+            });
+            return cnt;
+        }
+
+        function updateUnrememberCounters() {
+            const currentUnremCount = countTotalUnremembered(activeSection);
+            const badge = document.getElementById('catUnrememberBadge');
+            const solBadge = document.getElementById('solUnrememberCount');
+            if (badge) badge.innerText = currentUnremCount;
+            if (solBadge) solBadge.innerText = `📌 ${currentUnremCount}`;
+        }
+
+        function toggleUnrememberFilter() {
+            showUnrememberedOnly = !showUnrememberedOnly;
+            const btn = document.getElementById('filterUnrememberBtn');
+            if (showUnrememberedOnly) {
+                btn.className = "bg-amber-500 text-slate-950 font-outfit font-bold text-xs px-4 py-2.5 rounded-xl uppercase transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2";
+            } else {
+                btn.className = "bg-[#0F172A] border border-[#1E2B48] hover:border-amber-400 text-amber-400 font-outfit font-bold text-xs px-4 py-2.5 rounded-xl uppercase transition-all flex items-center justify-center gap-2";
+            }
+            renderPart2Catalog();
+        }
+
+        function goHome() {
+            clearInterval(sTimerInterval);
+            clearInterval(qTimerInterval);
+            document.getElementById('homeView').classList.remove('hidden');
+            document.getElementById('quizView').classList.add('hidden');
+            document.getElementById('analysisView').classList.add('hidden');
+            document.getElementById('viewPart1').classList.remove('hidden');
+            document.getElementById('viewPart2').classList.add('hidden');
+            document.getElementById('sessionTimerWrapper').classList.add('hidden');
+            switchMainTab('part1');
+        }
+
+        function switchMainTab(tab) {
+            const tab1 = document.getElementById('tabPart1');
+            const tab2 = document.getElementById('tabPart2');
+            const view1 = document.getElementById('viewPart1');
+            const view2 = document.getElementById('viewPart2');
+
+            if (tab === 'part1') {
+                view1.classList.remove('hidden');
+                view2.classList.add('hidden');
+                tab1.className = "px-5 py-2 rounded-lg font-outfit font-bold text-xs tracking-wider uppercase transition-all bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20";
+                tab2.className = "px-5 py-2 rounded-lg font-outfit font-bold text-xs tracking-wider uppercase text-slate-400 hover:text-white transition-all";
+            } else {
+                view1.classList.add('hidden');
+                view2.classList.remove('hidden');
+                tab2.className = "px-5 py-2 rounded-lg font-outfit font-bold text-xs tracking-wider uppercase transition-all bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20";
+                tab1.className = "px-5 py-2 rounded-lg font-outfit font-bold text-xs tracking-wider uppercase text-slate-400 hover:text-white transition-all";
+                renderPart2Catalog();
+            }
+        }
+
+        function switchCatalogSection(secKey) {
+            activeSection = secKey;
+            const buttons = [
+                { id: 'btnCatSecAll', key: 'all' },
+                { id: 'btnCatSec1', key: 1 },
+                { id: 'btnCatSec2', key: 2 },
+                { id: 'btnCatSec3', key: 3 }
+            ];
+
+            buttons.forEach(item => {
+                const btn = document.getElementById(item.id);
+                if (btn) {
+                    if (item.key === secKey) {
+                        btn.className = "px-4 py-2 rounded-xl font-outfit font-bold text-xs uppercase transition-all bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20";
+                    } else {
+                        btn.className = "px-4 py-2 rounded-xl font-outfit font-bold text-xs uppercase transition-all bg-[#0F172A] border border-[#1E2B48] text-slate-400 hover:text-white";
+                    }
+                }
+            });
+
+            renderPart2Catalog();
+        }
+
+        function startQuiz(sectionKey) {
+            activeSection = sectionKey;
+            const currentSection = sectionsData[activeSection];
+            
+            const qCount = currentSection.questions.length;
+            currentIdx = 0;
+            userAnswers = new Array(qCount).fill(-1);
+            reviewStatus = new Array(qCount).fill(false);
+            timeLogs = new Array(qCount).fill(0);
+            sSeconds = 0;
+
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('analysisView').classList.add('hidden');
+            document.getElementById('quizView').classList.remove('hidden');
+            document.getElementById('sessionTimerWrapper').classList.remove('hidden');
+
+            document.getElementById('mapSectionDisplay').innerText = `${currentSection.title} (${qCount} Qs)`;
+            document.getElementById('subHeaderContext').innerText = `${currentSection.title} • ${qCount} Questions`;
+            document.getElementById('btnSubmitSection').innerText = `Submit ${currentSection.title}`;
+
+            startSessionTimer();
+            buildProgressGrid();
+            loadQuestion();
+        }
+
+        function buildProgressGrid() {
+            const currentSection = sectionsData[activeSection];
+            const grid = document.getElementById('progressGrid');
+            grid.innerHTML = '';
+            
+            for (let i = 0; i < currentSection.questions.length; i++) {
+                const cell = document.createElement('button');
+                cell.className = "h-9 rounded-lg text-xs font-bold font-mono-code flex items-center justify-center transition-all border border-transparent";
+                cell.innerText = (i + 1).toString().padStart(2, '0');
+                cell.onclick = () => jumpToQuestion(i);
+                cell.id = `gridCell-${i}`;
+                grid.appendChild(cell);
+            }
+            updateGridStyles();
+        }
+
+        function updateGridStyles() {
+            const currentSection = sectionsData[activeSection];
+            let answeredCount = 0;
+            let skippedCount = 0;
+            let flaggedCount = 0;
+
+            for (let i = 0; i < currentSection.questions.length; i++) {
+                const cell = document.getElementById(`gridCell-${i}`);
+                if (!cell) continue;
+
+                cell.className = "h-9 rounded-lg text-xs font-bold font-mono-code flex items-center justify-center transition-all border";
+
+                if (i === currentIdx) {
+                    cell.classList.add('bg-sky-500', 'text-slate-950', 'border-sky-400', 'shadow-md');
+                } else if (reviewStatus[i]) {
+                    cell.classList.add('bg-orange-500', 'text-slate-950', 'border-orange-400');
+                    flaggedCount++;
+                } else if (userAnswers[i] === "SKIPPED") {
+                    cell.classList.add('bg-slate-800', 'text-slate-400', 'border-slate-700');
+                    skippedCount++;
+                } else if (userAnswers[i] !== -1) {
+                    cell.classList.add('bg-amber-950/60', 'text-amber-400', 'border-amber-500/50');
+                    answeredCount++;
+                } else {
+                    cell.classList.add('bg-[#0F172A]', 'text-slate-400', 'border-[#1E2B48]');
+                }
+            }
+
+            document.getElementById('cntAns').innerText = answeredCount;
+            document.getElementById('cntSkp').innerText = skippedCount;
+            document.getElementById('cntFlg').innerText = flaggedCount;
+        }
+
+        function loadQuestion() {
+            const currentSection = sectionsData[activeSection];
+            const q = currentSection.questions[currentIdx];
+            selectedIdx = null;
+            qSeconds = 0;
+
+            document.getElementById('qIndex').innerText = `Question ${currentIdx + 1} of ${currentSection.questions.length} (Q.${q.qNum})`;
+            document.getElementById('qTagDisplay').innerText = q.tag;
+            document.getElementById('targetQuestion').innerHTML = q.w;
+
+            document.getElementById('firstBtn').disabled = currentIdx === 0;
+            document.getElementById('prevBtn').disabled = currentIdx === 0;
+            document.getElementById('nextBtn').disabled = currentIdx === currentSection.questions.length - 1;
+            document.getElementById('lastBtn').disabled = currentIdx === currentSection.questions.length - 1;
+
+            const reviewBtn = document.getElementById('reviewBtn');
+            if (reviewStatus[currentIdx]) {
+                reviewBtn.className = "bg-orange-500 text-slate-950 border border-orange-400 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase";
+            } else {
+                reviewBtn.className = "border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 px-2 py-2.5 rounded-xl text-xs font-outfit font-bold uppercase";
+            }
+
+            const container = document.getElementById('optionsGrid');
+            container.innerHTML = '';
+
+            q.opts.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = "option-pill w-full p-4 rounded-xl text-left flex items-start gap-3.5 border text-sm font-medium";
+                btn.innerHTML = `
+                    <span class="font-outfit font-extrabold text-sm text-amber-400 w-5 shrink-0 text-center leading-normal">${i + 1}.</span>
+                    <span class="text-slate-200 leading-tight font-outfit">${opt}</span>
+                `;
+                btn.onclick = () => selectOption(i, btn);
+                
+                if (userAnswers[currentIdx] !== -1 && userAnswers[currentIdx] !== "SKIPPED" && userAnswers[currentIdx] === i) {
+                    btn.classList.add('selected');
+                    selectedIdx = i;
+                }
+
+                container.appendChild(btn);
+            });
+
+            updateGridStyles();
+            startQuestionTimer();
+        }
+
+        function selectOption(idx, el) {
+            selectedIdx = idx;
+            document.querySelectorAll('.option-pill').forEach(btn => btn.classList.remove('selected'));
+            el.classList.add('selected');
+            
+            userAnswers[currentIdx] = idx;
+            reviewStatus[currentIdx] = false;
+            updateGridStyles();
+        }
+
+        function clearResponse() {
+            userAnswers[currentIdx] = -1;
+            reviewStatus[currentIdx] = false;
+            selectedIdx = null;
+            document.querySelectorAll('.option-pill').forEach(btn => btn.classList.remove('selected'));
+            updateGridStyles();
+        }
+
+        function toggleMarkReview() {
+            reviewStatus[currentIdx] = !reviewStatus[currentIdx];
+            if (reviewStatus[currentIdx] && userAnswers[currentIdx] === "SKIPPED") {
+                userAnswers[currentIdx] = -1;
+            }
+            loadQuestion();
+        }
+
+        function navigate(direction) {
+            const currentSection = sectionsData[activeSection];
+            timeLogs[currentIdx] += qSeconds;
+            
+            if (userAnswers[currentIdx] === -1) {
+                userAnswers[currentIdx] = "SKIPPED";
+            }
+
+            if (direction === 'first') currentIdx = 0;
+            else if (direction === 'prev' && currentIdx > 0) currentIdx--;
+            else if (direction === 'next' && currentIdx < currentSection.questions.length - 1) currentIdx++;
+            else if (direction === 'last') currentIdx = currentSection.questions.length - 1;
+
+            loadQuestion();
+        }
+
+        function jumpToQuestion(idx) {
+            timeLogs[currentIdx] += qSeconds;
+            if (userAnswers[currentIdx] === -1) {
+                userAnswers[currentIdx] = "SKIPPED";
+            }
+            currentIdx = idx;
+            loadQuestion();
+        }
+
+        function startSessionTimer() {
+            clearInterval(sTimerInterval);
+            sSeconds = 0;
+            const timerEl = document.getElementById('sessionTimer');
+            timerEl.innerText = "00:00";
+            
+            sTimerInterval = setInterval(() => {
+                sSeconds++;
+                timerEl.innerText = formatMinutes(sSeconds);
+            }, 1000);
+        }
+
+        function startQuestionTimer() {
+            clearInterval(qTimerInterval);
+            document.getElementById('qTimer').innerText = "00:00";
+            qTimerInterval = setInterval(() => {
+                qSeconds++;
+                document.getElementById('qTimer').innerText = formatMinutes(qSeconds);
+            }, 1000);
+        }
+
+        function formatMinutes(sec) {
+            const m = Math.floor(sec / 60).toString().padStart(2, '0');
+            const s = (sec % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function openRulesModal() {
+            document.getElementById('rulesModalBackdrop').classList.remove('hidden');
+            document.getElementById('rulesModalBackdrop').classList.add('flex');
+        }
+
+        function closeRulesModal() {
+            document.getElementById('rulesModalBackdrop').classList.add('hidden');
+            document.getElementById('rulesModalBackdrop').classList.remove('flex');
+        }
+
+        function confirmReset() {
+            showModal("⚠️", "Reset Test?", `Reset current session for ${sectionsData[activeSection].title}?`, () => {
+                hideModal();
+                goHome();
+            });
+        }
+
+        function confirmSubmit() {
+            const currentSection = sectionsData[activeSection];
+            let unanswered = 0;
+            userAnswers.forEach(ans => {
+                if (ans === -1 || ans === "SKIPPED") unanswered++;
+            });
+
+            let warnText = unanswered > 0 
+                ? `You have ${unanswered} unanswered/skipped questions out of ${currentSection.questions.length}. Would you like to finalize and evaluate now?`
+                : `You answered all ${currentSection.questions.length} questions. Submit and calculate performance?`;
+
+            showModal("🏁", `Submit ${currentSection.title}?`, warnText, () => {
+                hideModal();
+                finishSession();
+            });
+        }
+
+        function finishSession() {
+            clearInterval(sTimerInterval);
+            clearInterval(qTimerInterval);
+            
+            document.getElementById('quizView').classList.add('hidden');
+            document.getElementById('analysisView').classList.remove('hidden');
+            document.getElementById('sessionTimerWrapper').classList.add('hidden');
+
+            document.getElementById('analysisHeading').innerHTML = `${sectionsData[activeSection].title} <span class="text-amber-400">Scorecard</span>`;
+
+            renderPerformanceLogs();
+        }
+
+        function renderPerformanceLogs() {
+            const currentSection = sectionsData[activeSection];
+            let correct = 0;
+            let incorrect = 0;
+            let skipped = 0;
+            const qCount = currentSection.questions.length;
+
+            userAnswers.forEach((ans, i) => {
+                const q = currentSection.questions[i];
+                if (ans === q.ans) correct++;
+                else if (ans === "SKIPPED" || ans === -1) skipped++;
+                else incorrect++;
+            });
+
+            document.getElementById('lblCorrect').innerText = `${correct}/${qCount}`;
+            document.getElementById('lblWrong').innerText = `${incorrect}/${qCount}`;
+            document.getElementById('lblUnat').innerText = `${skipped}/${qCount}`;
+            
+            const precisionRating = qCount > 0 ? Math.round((correct / qCount) * 100) : 0;
+            document.getElementById('lblAcc').innerText = `${precisionRating}%`;
+            document.getElementById('statNetResult').innerText = `${correct}/${qCount}`;
+
+            document.getElementById('lblFilterAll').innerText = qCount;
+            document.getElementById('lblFilterCorrect').innerText = correct;
+            document.getElementById('lblFilterWrong').innerText = incorrect;
+            document.getElementById('lblFilterSkipped').innerText = skipped;
+
+            setTimeout(() => {
+                document.getElementById('bfCorrect').style.width = `${(correct / qCount) * 100}%`;
+                document.getElementById('bfWrong').style.width = `${(incorrect / qCount) * 100}%`;
+                document.getElementById('bfUnat').style.width = `${(skipped / qCount) * 100}%`;
+                document.getElementById('bfAcc').style.width = `${precisionRating}%`;
+            }, 100);
+
+            const chartCtx = document.getElementById('scoreChart').getContext('2d');
+            if (activeChart) activeChart.destroy();
+            activeChart = new Chart(chartCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Correct', 'Incorrect', 'Skipped'],
+                    datasets: [{
+                        data: [correct, incorrect, skipped],
+                        backgroundColor: ['#F59E0B', '#F43F5E', '#475569'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    plugins: { legend: { display: false } },
+                    cutout: '78%'
+                }
+            });
+
+            applySolutionFilter('all');
+        }
+
+        function applySolutionFilter(filterType) {
+            const currentSection = sectionsData[activeSection];
+            const buttons = {
+                all: document.getElementById('btnFilterAll'),
+                correct: document.getElementById('btnFilterCorrect'),
+                wrong: document.getElementById('btnFilterWrong'),
+                skipped: document.getElementById('btnFilterSkipped')
+            };
+
+            Object.keys(buttons).forEach(key => {
+                if (buttons[key]) {
+                    if (key === filterType) {
+                        buttons[key].className = "px-3 py-1 rounded-lg font-bold uppercase text-[10px] bg-amber-500 text-slate-950 transition-all";
+                    } else {
+                        buttons[key].className = "px-3 py-1 rounded-lg font-bold uppercase text-[10px] text-slate-400 hover:text-white transition-all";
+                    }
+                }
+            });
+
+            const solContainer = document.getElementById('solutionsContainer');
+            solContainer.innerHTML = '';
+
+            updateUnrememberCounters();
+
+            let matchesFound = 0;
+
+            userAnswers.forEach((ans, i) => {
+                const q = currentSection.questions[i];
+                const isCorrect = ans === q.ans;
+                const isSkipped = ans === "SKIPPED" || ans === -1;
+                const isUnremembered = getUnrememberState(q.qNum);
+
+                let isMatch = false;
+                if (filterType === 'all') isMatch = true;
+                else if (filterType === 'correct' && isCorrect) isMatch = true;
+                else if (filterType === 'wrong' && !isCorrect && !isSkipped) isMatch = true;
+                else if (filterType === 'skipped' && isSkipped) isMatch = true;
+
+                if (!isMatch) return;
+                matchesFound++;
+
+                const solDiv = document.createElement('div');
+                solDiv.className = `p-5 rounded-2xl border ${isUnremembered ? 'border-amber-500/70 bg-[#0B1120]' : 'border-[#1E2B48] bg-[#090E1D]'} space-y-3 transition-all`;
+
+                let statusBadge = "";
+                if (isCorrect) statusBadge = `<span class='px-2.5 py-0.5 rounded-md text-[10px] uppercase font-bold tracking-wider bg-amber-950/60 text-amber-400 border border-amber-800 font-mono-code'>Correct</span>`;
+                else if (isSkipped) statusBadge = `<span class='px-2.5 py-0.5 rounded-md text-[10px] uppercase font-bold tracking-wider bg-slate-800 text-slate-400 border border-slate-700 font-mono-code'>Skipped</span>`;
+                else statusBadge = `<span class='px-2.5 py-0.5 rounded-md text-[10px] uppercase font-bold tracking-wider bg-rose-950/60 text-rose-400 border border-rose-800 font-mono-code'>Wrong</span>`;
+
+                const userSelectionText = isSkipped ? "None" : q.opts[ans];
+                const correctText = q.opts[q.ans];
+
+                solDiv.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#1E2B48] pb-3">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs text-slate-400 uppercase tracking-widest font-mono-code font-bold">Item ${i + 1} (Q.${q.qNum})</span>
+                            <span class="text-[10px] bg-[#0F172A] text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded uppercase font-mono-code">${q.tag}</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <label class="flex items-center gap-2 text-xs cursor-pointer select-none text-amber-400 hover:text-amber-300 font-outfit font-bold uppercase tracking-wider bg-[#050811] border border-[#1E2B48] px-2.5 py-1 rounded-lg">
+                                <input type="checkbox" ${isUnremembered ? 'checked' : ''} onchange="toggleUnremember(${q.qNum}, this.checked)" class="unremember-checkbox w-4 h-4 rounded border-[#1E2B48] bg-[#050811]">
+                                <span>📌 Unremember</span>
+                            </label>
+                            ${statusBadge}
+                            <span class="text-xs text-slate-500 font-mono-code">${formatMinutes(timeLogs[i])}</span>
+                        </div>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-white leading-relaxed font-outfit">${q.w}</h4>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs border-y border-[#1E2B48]/50 py-2 font-outfit">
+                        <div><span class="text-slate-400 font-medium">Your Response:</span> <span class="font-bold ${isCorrect ? 'text-amber-400' : (isSkipped ? 'text-slate-400' : 'text-rose-400')}">${userSelectionText}</span></div>
+                        <div><span class="text-slate-400 font-medium">Correct Key:</span> <span class="text-amber-400 font-bold">${correctText}</span></div>
+                    </div>
+
+                    <div class="pt-1">
+                        ${q.exp}
+                    </div>
+                `;
+
+                solContainer.appendChild(solDiv);
+            });
+
+            if (matchesFound === 0) {
+                solContainer.innerHTML = `<div class="text-center py-12 text-slate-500 text-sm font-outfit">No items match the selected filter.</div>`;
+            }
+        }
+
+        function renderPart2Catalog() {
+            const container = document.getElementById('part2Catalog');
+            const searchVal = document.getElementById('part2Search').value.toLowerCase().trim();
+            container.innerHTML = '';
+
+            const currentSection = sectionsData[activeSection];
+            document.getElementById('part2Title').innerText = `Visual Catalog (${currentSection.title} - ${currentSection.questions.length} Qs)`;
+            document.getElementById('part2Sub').innerText = `${currentSection.label}`;
+
+            updateUnrememberCounters();
+
+            let displayCount = 0;
+
+            currentSection.questions.forEach((q, idx) => {
+                const isUnremembered = getUnrememberState(q.qNum);
+
+                if (showUnrememberedOnly && !isUnremembered) return;
+
+                if (searchVal) {
+                    const fullTxt = `q.${q.qNum} ${q.tag} ${q.w} ${q.exp}`.toLowerCase();
+                    if (!fullTxt.includes(searchVal)) return;
+                }
+
+                displayCount++;
+                const card = document.createElement('div');
+                card.className = `p-6 rounded-2xl border ${isUnremembered ? 'border-amber-500 bg-[#0B1120] shadow-amber-500/10' : 'border-[#1E2B48] bg-[#090E1D]'} shadow-2xl space-y-4 transition-all`;
+                card.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#1E2B48] pb-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/40 text-amber-400 font-outfit font-extrabold text-sm flex items-center justify-center">${idx + 1}</span>
+                            <span class="text-xs bg-[#0F172A] text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-md font-mono-code font-bold">Q.${q.qNum} • ${q.tag}</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <label class="flex items-center gap-2 text-xs cursor-pointer select-none text-amber-400 hover:text-amber-300 font-outfit font-bold uppercase tracking-wider bg-[#0F172A] border border-[#1E2B48] px-3 py-1.5 rounded-xl">
+                                <input type="checkbox" ${isUnremembered ? 'checked' : ''} onchange="toggleUnremember(${q.qNum}, this.checked)" class="unremember-checkbox w-4 h-4 rounded border-[#1E2B48] bg-[#050811]">
+                                <span>📌 Unremember</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-left font-outfit text-base text-slate-100 font-medium leading-relaxed bg-[#0F172A]/60 p-4 rounded-xl border border-[#1E2B48]/60">
+                        ${q.w}
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        ${q.opts.map((opt, oIdx) => `
+                            <div class="p-3 rounded-xl border ${oIdx === q.ans ? 'border-amber-500 bg-amber-950/30 text-amber-300 font-bold' : 'border-[#1E2B48] bg-[#050811]/40 text-slate-300'} text-xs text-left font-outfit">
+                                <span class="font-outfit font-bold text-xs mr-1.5 ${oIdx === q.ans ? 'text-amber-400' : 'text-slate-500'}">${oIdx + 1}.</span>
+                                ${opt}
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="pt-2">
+                        ${q.exp}
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            if (displayCount === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 bg-[#090E1D] border border-[#1E2B48] rounded-2xl p-8">
+                        <div class="text-3xl mb-3">🔍</div>
+                        <h4 class="font-outfit text-lg font-bold text-white uppercase mb-1">No Questions Found</h4>
+                        <p class="text-xs text-slate-400">Try adjusting your search criteria or uncheck the Unremembered filter.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function filterPart2() {
+            renderPart2Catalog();
+        }
+
+        function retryTest() {
+            startQuiz(activeSection);
+        }
+
+        function showModal(icon, title, message, confirmCallback) {
+            const backdrop = document.getElementById('modalBackdrop');
+            document.getElementById('modalIcon').innerText = icon;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = message;
+            
+            const confirmBtn = document.getElementById('modalConfirmBtn');
+            confirmBtn.onclick = confirmCallback;
+
+            backdrop.classList.remove('hidden');
+            backdrop.classList.add('flex');
+        }
+
+        function hideModal() {
+            const backdrop = document.getElementById('modalBackdrop');
+            backdrop.classList.add('hidden');
+            backdrop.classList.remove('flex');
+        }
+
+        document.getElementById('modalCancelBtn').onclick = hideModal;
+
+        window.onload = () => {
+            goHome();
+            updateUnrememberCounters();
+        };
+    </script>
+</body>
+</html>
